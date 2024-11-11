@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // Singleton del GameManager
+    public static GameManager Instance { get; private set; }
+
+    [SerializeField] private int currentAct = 1;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetAct(int newAct)
     {
-        
+        currentAct = newAct;
+        Debug.Log("Acto " + currentAct);
     }
 }
