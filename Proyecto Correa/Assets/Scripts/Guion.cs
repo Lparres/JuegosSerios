@@ -10,15 +10,11 @@ public class Guion : MonoBehaviour
     // The ink story that we're wrapping
     Story _inkStory;
 
-    void Update()
+    public void NextLine()
     {
-        if(Input.GetKeyDown(KeyCode.A))
+        if (_inkStory.canContinue)
         {
-            Debug.Log(_inkStory.canContinue);
-            if (_inkStory.canContinue)
-            {
-                Debug.Log("Siguiente linea: " + _inkStory.Continue());
-            }
+            Debug.Log("Siguiente linea: " + _inkStory.Continue());
         }
     }
 
