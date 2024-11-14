@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Interactor2000 : MonoBehaviour
 {
-    Ray _ray;
-    RaycastHit _hit;
+    private Ray _ray;
+    private RaycastHit _hit;
 
     // Update is called once per frame
     void Update()

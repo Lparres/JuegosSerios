@@ -8,7 +8,7 @@ public class Guion : MonoBehaviour
     private TextAsset _inkAsset;
 
     // The ink story that we're wrapping
-    Story _inkStory;
+    private Story _inkStory;
 
     public void NextLine()
     {
