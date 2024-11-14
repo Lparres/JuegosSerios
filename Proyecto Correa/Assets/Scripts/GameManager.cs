@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,5 +25,11 @@ public class GameManager : MonoBehaviour
     {
         currentAct = newAct;
         Debug.Log("Acto " + currentAct);
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        // Carga la escena especificada por su nombre
+        SceneManager.LoadScene(sceneName);
     }
 }
