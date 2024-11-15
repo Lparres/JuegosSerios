@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int currentAct = 1;
 
+    [SerializeField] private ProgressBarController progressBarController;
     private void Awake()
     {
         if (Instance == null)
@@ -32,4 +33,21 @@ public class GameManager : MonoBehaviour
         // Carga la escena especificada por su nombre
         SceneManager.LoadScene(sceneName);
     }
+
+    #region MEDIDORES
+    public void UpdateHunger(float amount)
+    {
+        progressBarController.UpdateHunger(amount);
+    }
+
+    public void UpdateEntertainment(float amount)
+    {
+        progressBarController.UpdateEntertainment(amount);
+    }
+
+    public void UpdateWalk(float amount)
+    {
+        progressBarController.UpdateWalk(amount);
+    }
+    #endregion
 }
