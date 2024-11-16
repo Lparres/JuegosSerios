@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 0faac0386fdfa314da179c877f0fde3e
   - enabled: 1
+    path: Assets/Scenes/MinijuegoComida.unity
+    guid: 679243b32d910ac4e8fa71ce46551b62
+  - enabled: 1
     path: Assets/Scenes/Acto1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/MinijuegoComida.unity
-    guid: 679243b32d910ac4e8fa71ce46551b62
+    path: Assets/Scenes/Acto2.unity
+    guid: 17adba840a31d5e43a3b34eaa168bbff
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

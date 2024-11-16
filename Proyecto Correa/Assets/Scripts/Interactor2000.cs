@@ -19,7 +19,6 @@ public class Interactor2000 : MonoBehaviour
                 Debug.Log("HIT");
                 if (_hit.collider.gameObject.GetComponent<Guion>() != null)
                 {
-                    Debug.Log("Hay guion");
                     _hit.collider.gameObject.GetComponent<Guion>().NextLine();
                 }
             }
