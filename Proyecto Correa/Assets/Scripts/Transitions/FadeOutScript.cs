@@ -7,6 +7,7 @@ public class IntroSequence : MonoBehaviour
 {
     public Image backgroundImage;          // Imagen de fondo
     public TextMeshProUGUI introText;      // Texto
+    public GameObject barsParent;          // Medidores
 
     public float initialDelay = 2f;        // Tiempo antes de que aparezca el texto
     public float textFadeInDuration = 1f;  // Duración del fade in del texto
@@ -39,6 +40,9 @@ public class IntroSequence : MonoBehaviour
 
         // 6. Fade out del fondo
         yield return StartCoroutine(FadeImage(backgroundImage, 1f, 0f, backgroundFadeOutDuration));
+
+        // 7. Activar medidores
+        barsParent.SetActive(true);
     }
 
     IEnumerator FadeText(TextMeshProUGUI text, float startAlpha, float endAlpha, float duration)
