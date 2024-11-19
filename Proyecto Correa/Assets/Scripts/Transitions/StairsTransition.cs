@@ -70,7 +70,7 @@ public class StairsTransition : MonoBehaviour
         fadeImage.color = color;
 
         // Cambiar de escena
-        GameManager.Instance.getPlayer().GetComponent<Transform>().position = objetivePos.position;
+        GameManager.Instance.GetPlayer().GetComponent<Transform>().position = objetivePos.position;
 
         // Comenzar el fade in de la nueva escena
         StartCoroutine(FadeIn());

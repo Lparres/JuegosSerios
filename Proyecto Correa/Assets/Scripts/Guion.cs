@@ -10,7 +10,28 @@ public class Guion : MonoBehaviour
     // The ink story that we're wrapping
     private Story _inkStory;
 
-    public void NextLine()
+    private bool _interacting;
+
+    public void LittleTalks()
+    {
+        if(!_interacting)
+        {
+            StartDialogue();
+        }
+        else
+        {
+            NextLine();
+        }
+    }
+
+    private void StartDialogue()
+    {
+        _interacting = true;
+        _inkStory.ChoosePathString("load_segment");
+        NextLine();
+    }
+
+    private void NextLine()
     {
         if (_inkStory.canContinue)
         {
@@ -18,6 +39,7 @@ public class Guion : MonoBehaviour
         }
         else
         {
+            _interacting = false;
             GameManager.Instance.DialogueEnded();
         }
     }

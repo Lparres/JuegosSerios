@@ -1137,8 +1137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -2.796, y: -2.472}
+  m_SizeDelta: {x: 725.656, y: 138.727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504285301
 MonoBehaviour:
@@ -1667,7 +1667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &659734447
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3226,9 +3226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ui: {fileID: 478255516}
-  currentAct: 1
-  progressBarController: {fileID: 0}
-  player: {fileID: 1974142628}
+  _currentAct: 1
+  _progressBarController: {fileID: 0}
+  _player: {fileID: 0}
 --- !u!1001 &1237716021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5671,11 +5671,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1158998980}
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
---- !u!1 &1974142628 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 1974142627}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1982881061
 PrefabInstance:
   m_ObjectHideFlags: 0

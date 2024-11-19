@@ -32,7 +32,7 @@ public class Interactor2000 : MonoBehaviour
                     // --- GUION ---
                     if (hitObject.GetComponent<Guion>() != null)
                     {
-                        hitObject.GetComponent<Guion>().NextLine();
+                        hitObject.GetComponent<Guion>().LittleTalks();
                     }
                     // --- PUERTA ---
                     else if (hitObject.GetComponent<DoorController>() != null)

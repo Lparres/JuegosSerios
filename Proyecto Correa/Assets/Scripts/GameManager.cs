@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UIManager _ui;
 
-    [SerializeField] private int currentAct = 1;
+    [SerializeField] private int _currentAct = 1;
 
-    [SerializeField] private ProgressBarController progressBarController;
-    [SerializeField] private GameObject player;
-    public GameObject getPlayer() { return player; }
+    [SerializeField] private ProgressBarController _progressBarController;
+    [SerializeField] private GameObject _player;
+    public GameObject GetPlayer() { return _player; }
 
     private void Awake()
     {
@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
 
     public void SetAct(int newAct)
     {
-        currentAct = newAct;
-        Debug.Log("Acto " + currentAct);
+        _currentAct = newAct;
+        Debug.Log("Acto " + _currentAct);
     }
 
     public void ChangeScene(string sceneName)
@@ -53,17 +53,17 @@ public class GameManager : MonoBehaviour
     #region MEDIDORES
     public void UpdateHunger(float amount)
     {
-        progressBarController.UpdateHunger(amount);
+        _progressBarController.UpdateHunger(amount);
     }
 
     public void UpdateEntertainment(float amount)
     {
-        progressBarController.UpdateEntertainment(amount);
+        _progressBarController.UpdateEntertainment(amount);
     }
 
     public void UpdateWalk(float amount)
     {
-        progressBarController.UpdateWalk(amount);
+        _progressBarController.UpdateWalk(amount);
     }
     #endregion
 }
