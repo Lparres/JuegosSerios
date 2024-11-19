@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     // Singleton del GameManager
     public static GameManager Instance { get; private set; }
 
+    [SerializeField] private UIManager _ui;
+
     [SerializeField] private int currentAct = 1;
 
     [SerializeField] private ProgressBarController progressBarController;
@@ -20,6 +22,16 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void NextLine(string text)
+    {
+        _ui.ChangeDialogue(text);
+    }
+
+    public void DialogueEnded()
+    {
+        _ui.OnDialogueEnd();
     }
 
     public void SetAct(int newAct)

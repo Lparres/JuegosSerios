@@ -14,7 +14,11 @@ public class Guion : MonoBehaviour
     {
         if (_inkStory.canContinue)
         {
-            Debug.Log("Siguiente linea: " + _inkStory.Continue());
+            GameManager.Instance.NextLine(_inkStory.Continue());
+        }
+        else
+        {
+            GameManager.Instance.DialogueEnded();
         }
     }
 

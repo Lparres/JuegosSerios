@@ -19,7 +19,7 @@ public class Interactor2000 : MonoBehaviour
             _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             // Realizar el raycast
-            if (Physics.Raycast(_ray, out _hit))
+            if (Physics.Raycast(_ray, out _hit, 200))
             {
                 GameObject hitObject = _hit.collider.gameObject;
 
