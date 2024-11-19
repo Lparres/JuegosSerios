@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentAct = 1;
 
     [SerializeField] private ProgressBarController progressBarController;
+    [SerializeField] private GameObject player;
+    public GameObject getPlayer() { return player; }
+
     private void Awake()
     {
         if (Instance == null)
