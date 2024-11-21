@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager _ui;
 
     [SerializeField] private int _currentAct = 1;
+    [SerializeField] private int _subIndexAct = 0;
 
     [SerializeField] private ProgressBarController _progressBarController;
     [SerializeField] private GameObject _player;
@@ -28,6 +29,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Debug.Log("Acto " + _currentAct + " Subíndice " + _subIndexAct);
+    }
     public void NextLine(string text)
     {
         _ui.ChangeDialogue(text);
@@ -42,6 +47,12 @@ public class GameManager : MonoBehaviour
     {
         _currentAct = newAct;
         Debug.Log("Acto " + _currentAct);
+    }
+
+    public void AddSubIndex()
+    {
+        _subIndexAct++;
+        Debug.Log("Acto " + _currentAct + " Subíndice " + _subIndexAct);
     }
 
     public void ChangeScene(string sceneName)
