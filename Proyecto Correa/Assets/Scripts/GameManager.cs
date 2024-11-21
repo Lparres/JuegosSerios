@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _subIndexAct = 0;
     public int SubIndex { get { return _subIndexAct; } }
 
+
+    [SerializeField] Guion miGUion;
     public Vector2 StoryPoint
     {
         get { return new Vector2(_currentAct, _subIndexAct); }
@@ -61,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         _subIndexAct++;
         Debug.Log("Acto " + _currentAct + " Sub�ndice " + _subIndexAct);
+        miGUion.NextDialogue();
     }
 
     public void ChangeScene(string sceneName)

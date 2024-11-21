@@ -3546,6 +3546,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxInteractionDistance: 1
   player: {fileID: 1291986261}
+--- !u!114 &1170800280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7041593112491205475, guid: 9df375beb0f53864eb21c5359688106c, type: 3}
+  m_PrefabInstance: {fileID: 1462209404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03924c11c5f30e40ae5f424a917c563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1174956068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 162539927898222776, guid: 8a9e15febae965a4db6f809b598e49b5, type: 3}
@@ -3630,6 +3641,7 @@ MonoBehaviour:
   _ui: {fileID: 478255516}
   _currentAct: 1
   _subIndexAct: 0
+  miGUion: {fileID: 1170800280}
   _progressBarController: {fileID: 1344498770}
   _player: {fileID: 1653416751}
 --- !u!1001 &1237716021

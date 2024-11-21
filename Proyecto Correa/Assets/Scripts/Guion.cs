@@ -25,6 +25,7 @@ public class Guion : MonoBehaviour
 
     public void NextDialogue()
     {
+        Debug.Log("Next Dialogue");
         Vector2 storyPoint = GameManager.Instance.StoryPoint;
         _inkStory = new Story(_textAssets[(int)storyPoint.x - 1][(int)storyPoint.y].text);
     }
@@ -56,6 +57,7 @@ public class Guion : MonoBehaviour
         else
         {
             _interacting = false;
+            _inkStory.ResetState();
             GameManager.Instance.DialogueEnded();
         }
     }
