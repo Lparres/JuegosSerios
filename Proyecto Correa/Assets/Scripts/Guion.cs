@@ -16,19 +16,22 @@ public class Guion : MonoBehaviour
     [SerializeField]
     private TextAsset[] _act5TextAssets;
 
-    private TextAsset[][] _textAssets;
+    private TextAsset[][] _textAssets = new TextAsset[5][];
 
     // The ink story that we're wrapping
     private Story _inkStory;
 
     private bool _interacting;
 
-    private int _dialogueIndex = -1;
+    private Vector2 _storyPoint;
 
     public void NextDialogue()
     {
-        _dialogueIndex++;
-        _inkStory = new Story(_textAssets[GameManager.Instance.Act - 1][_dialogueIndex].text);
+        Debug.Log("Next Dialogue");
+        Debug.Log(GameManager.Instance);
+        _storyPoint = new Vector2(GameManager.Instance.Act, GameManager.Instance.SubIndex);
+        Debug.Log(_storyPoint);
+        _inkStory = new Story(_textAssets[(int)_storyPoint.x - 1][(int)_storyPoint.y].text);
     }
 
     public void LittleTalks()
@@ -46,7 +49,6 @@ public class Guion : MonoBehaviour
     private void StartDialogue()
     {
         _interacting = true;
-        _inkStory.ChoosePathString("load_segment");
         NextLine();
     }
 

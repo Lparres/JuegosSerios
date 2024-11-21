@@ -396,7 +396,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03924c11c5f30e40ae5f424a917c563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inkAsset: {fileID: 4900000, guid: 7668f61aab3da5d4dbec6d1cfd61ae16, type: 3}
+  _act1TextAssets:
+  - {fileID: 4900000, guid: 80b48b698f1f64f45985b4cb76102d01, type: 3}
+  - {fileID: 4900000, guid: 7cd1eb5c15b8ad24d8f2e570c39c3cd2, type: 3}
+  - {fileID: 4900000, guid: 0b7a25545214f2549b03a9cf3888d934, type: 3}
+  _act2TextAssets: []
+  _act3TextAssets: []
+  _act4TextAssets: []
+  _act5TextAssets: []
 --- !u!54 &3517782127150656297
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _subIndexAct = 0;
     public int SubIndex { get { return _subIndexAct; } }
 
+    public Vector2 StoryPoint
+    {
+        get { return new Vector2(_currentAct, _subIndexAct); }
+    }
+
     [SerializeField] private ProgressBarController _progressBarController;
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }

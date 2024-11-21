@@ -3350,8 +3350,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ui: {fileID: 478255516}
   _currentAct: 1
-  _progressBarController: {fileID: 0}
-  _player: {fileID: 0}
+  _subIndexAct: 0
+  _progressBarController: {fileID: 1344498770}
+  _player: {fileID: 1568002874}
 --- !u!1001 &1237716021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4655,6 +4656,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 4.049
       objectReference: {fileID: 0}
+    - target: {fileID: 7041593112491205475, guid: 9df375beb0f53864eb21c5359688106c, type: 3}
+      propertyPath: _act1TextAssets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041593112491205475, guid: 9df375beb0f53864eb21c5359688106c, type: 3}
+      propertyPath: '_act1TextAssets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4900000, guid: 80b48b698f1f64f45985b4cb76102d01, type: 3}
+    - target: {fileID: 7041593112491205475, guid: 9df375beb0f53864eb21c5359688106c, type: 3}
+      propertyPath: '_act1TextAssets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4900000, guid: 7cd1eb5c15b8ad24d8f2e570c39c3cd2, type: 3}
+    - target: {fileID: 7041593112491205475, guid: 9df375beb0f53864eb21c5359688106c, type: 3}
+      propertyPath: '_act1TextAssets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4900000, guid: 0b7a25545214f2549b03a9cf3888d934, type: 3}
     - target: {fileID: 8074571466788260471, guid: 9df375beb0f53864eb21c5359688106c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -4960,6 +4977,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548896488}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1568002874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1974142627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1569595000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5425301423747233996, guid: 8a9e15febae965a4db6f809b598e49b5, type: 3}
@@ -5389,6 +5411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90072817ee1e88a4bb5365941ac7f8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneTransitionManager: {fileID: 0}
 --- !u!65 &1728729923
 BoxCollider:
   m_ObjectHideFlags: 0
