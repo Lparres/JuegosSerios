@@ -23,15 +23,10 @@ public class Guion : MonoBehaviour
 
     private bool _interacting;
 
-    private Vector2 _storyPoint;
-
     public void NextDialogue()
     {
-        Debug.Log("Next Dialogue");
-        Debug.Log(GameManager.Instance);
-        _storyPoint = new Vector2(GameManager.Instance.Act, GameManager.Instance.SubIndex);
-        Debug.Log(_storyPoint);
-        _inkStory = new Story(_textAssets[(int)_storyPoint.x - 1][(int)_storyPoint.y].text);
+        Vector2 storyPoint = GameManager.Instance.StoryPoint;
+        _inkStory = new Story(_textAssets[(int)storyPoint.x - 1][(int)storyPoint.y].text);
     }
 
     public void LittleTalks()
