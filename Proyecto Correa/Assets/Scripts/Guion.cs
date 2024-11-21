@@ -16,10 +16,20 @@ public class Guion : MonoBehaviour
     [SerializeField]
     private TextAsset[] _act5TextAssets;
 
+    private TextAsset[][] _textAssets;
+
     // The ink story that we're wrapping
     private Story _inkStory;
 
     private bool _interacting;
+
+    private int _dialogueIndex = -1;
+
+    public void NextDialogue()
+    {
+        _dialogueIndex++;
+        _inkStory = new Story(_textAssets[GameManager.Instance.Act - 1][_dialogueIndex].text);
+    }
 
     public void LittleTalks()
     {
@@ -55,6 +65,12 @@ public class Guion : MonoBehaviour
 
     void Awake()
     {
-        _inkStory = new Story(_act1TextAssets[0].text);
+        _textAssets[0] = _act1TextAssets;
+        _textAssets[1] = _act2TextAssets;
+        _textAssets[2] = _act3TextAssets;
+        _textAssets[3] = _act4TextAssets;
+        _textAssets[4] = _act5TextAssets;
+
+        NextDialogue();
     }
 }
