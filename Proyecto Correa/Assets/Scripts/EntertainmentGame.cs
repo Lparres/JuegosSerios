@@ -1,7 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EntertainmentGame : MonoBehaviour
 {
+    [SerializeField] private SceneTransitionManager sceneTransitionManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +18,6 @@ public class EntertainmentGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.ChangeScene("MinijuegoEntretenimiento");
+        sceneTransitionManager.ChangeScene("MinijuegoEntretenimiento");
     }
 }
