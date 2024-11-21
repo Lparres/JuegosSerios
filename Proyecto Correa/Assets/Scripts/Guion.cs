@@ -65,7 +65,7 @@ public class Guion : MonoBehaviour
         }
     }
 
-    void Awake()
+    void Start()
     {
         _textAssets[0] = _act1TextAssets;
         _textAssets[1] = _act2TextAssets;
