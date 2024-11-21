@@ -1,3 +1,4 @@
+using System.Dynamic;
 using Ink.Runtime;
 using UnityEngine;
 
@@ -5,7 +6,15 @@ public class Guion : MonoBehaviour
 {
     // Set this file to your compiled json asset
     [SerializeField] 
-    private TextAsset _inkAsset;
+    private TextAsset[] _act1TextAssets;
+    [SerializeField]
+    private TextAsset[] _act2TextAssets;
+    [SerializeField]
+    private TextAsset[] _act3TextAssets;
+    [SerializeField]
+    private TextAsset[] _act4TextAssets;
+    [SerializeField]
+    private TextAsset[] _act5TextAssets;
 
     // The ink story that we're wrapping
     private Story _inkStory;
@@ -46,6 +55,6 @@ public class Guion : MonoBehaviour
 
     void Awake()
     {
-        _inkStory = new Story(_inkAsset.text);
+        _inkStory = new Story(_act1TextAssets[0].text);
     }
 }
