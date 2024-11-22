@@ -6,7 +6,7 @@ using System.Collections;
 public class SceneTransitionManager : MonoBehaviour
 {
     public Image fadeImage; // Imagen usada para el fade
-    public float fadeDuration = 1f; // Duración del fade
+    private float fadeDuration = 2f; // Duración del fade
 
     private bool isFading = false;
 
@@ -68,7 +68,7 @@ public class SceneTransitionManager : MonoBehaviour
         fadeImage.color = color;
 
         // Cambiar de escena
-        GameManager.Instance.ChangeScene(sceneName);
+        SceneManager.LoadScene(sceneName);
 
         // Comenzar el fade in de la nueva escena
         StartCoroutine(FadeIn());

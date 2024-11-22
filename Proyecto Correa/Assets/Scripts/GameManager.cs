@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UIManager _ui;
     [SerializeField] private ProgressBarController _progressBarController;
-    
+    [SerializeField] private SceneTransitionManager _sceneTransitionManager;
+    [SerializeField] private NarrativeManager _narrativeManager;
+
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
@@ -42,8 +44,8 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        // Carga la escena especificada por su nombre
-        SceneManager.LoadScene(sceneName);
+        Debug.Log(sceneName + " [Cambio Escena]");
+        _sceneTransitionManager.ChangeScene(sceneName);
     }
 
     #region MEDIDORES
