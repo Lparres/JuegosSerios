@@ -8,21 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private UIManager _ui;
-
-    [SerializeField] private int _currentAct = 1;
-    public int Act { get { return _currentAct; } }
-
-    [SerializeField] private int _subIndexAct = 0;
-    public int SubIndex { get { return _subIndexAct; } }
-
-
-    [SerializeField] Guion miGUion;
-    public Vector2 StoryPoint
-    {
-        get { return new Vector2(_currentAct, _subIndexAct); }
-    }
-
     [SerializeField] private ProgressBarController _progressBarController;
+    
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
@@ -41,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Acto " + _currentAct + " Sub�ndice " + _subIndexAct);
+        //Debug.Log("Acto " + _currentAct + " Sub�ndice " + _subIndexAct);
     }
     public void NextLine(string text)
     {
@@ -51,19 +38,6 @@ public class GameManager : MonoBehaviour
     public void DialogueEnded()
     {
         _ui.OnDialogueEnd();
-    }
-
-    public void SetAct(int newAct)
-    {
-        _currentAct = newAct;
-        Debug.Log("Acto " + _currentAct);
-    }
-
-    public void AddSubIndex()
-    {
-        _subIndexAct++;
-        Debug.Log("Acto " + _currentAct + " Sub�ndice " + _subIndexAct);
-        miGUion.NextDialogue();
     }
 
     public void ChangeScene(string sceneName)
