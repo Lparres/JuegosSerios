@@ -42,7 +42,7 @@ public class IntroSequence : MonoBehaviour
         yield return StartCoroutine(FadeImage(backgroundImage, 1f, 0f, backgroundFadeOutDuration));
 
         // 7. Activar medidores
-        barsParent.SetActive(true);
+        //barsParent.SetActive(true);
     }
 
     IEnumerator FadeText(TextMeshProUGUI text, float startAlpha, float endAlpha, float duration)
