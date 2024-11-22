@@ -29,8 +29,12 @@ public class PresentMinigame : MonoBehaviour
             _layers[_level].useGravity = true;
             _level++;
             _drag.ResetTraveledDistance();
-            
-            if (_level == 3) Debug.Log("TE SACO DEL NIVEl");
+
+            if (_level == 3)
+            {
+                NarrativeManager.Instance.AdvanceAct();
+                GameManager.Instance.ChangeScene("Acto1");
+            }
         }
     }
 }
