@@ -1,8 +1,4 @@
-
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Interactor2000 : MonoBehaviour
 {
@@ -21,7 +17,7 @@ public class Interactor2000 : MonoBehaviour
 
             // Realizar el raycast
             if (Physics.Raycast(_ray, out _hit, 200))
-            {
+            {                                                                                   
                 GameObject hitObject = _hit.collider.gameObject;
 
                 // Calcular la distancia al objeto impactado
@@ -31,14 +27,14 @@ public class Interactor2000 : MonoBehaviour
                 if (distanceToObject <= _maxInteractionDistance)
                 {
                     // --- GUION ---
-                    if (hitObject.GetComponent<Guion>() != null)
+                    if (hitObject.TryGetComponent<Guion>(out Guion g))
                     {
-                        hitObject.GetComponent<Guion>().LittleTalks();
+                        g.LittleTalks();
                     }
                     // --- PUERTA ---
-                    else if (hitObject.GetComponent<DoorController>() != null)
+                    else if (hitObject.TryGetComponent<DoorController>(out DoorController dc))
                     {
-                        hitObject.GetComponent<DoorController>().ToggleDoor();
+                        dc.ToggleDoor();
                     }
                 }
 
