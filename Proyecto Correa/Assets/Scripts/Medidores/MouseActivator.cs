@@ -2,30 +2,29 @@ using UnityEngine;
 
 public class MouseActivator : MonoBehaviour
 {
-    private bool activo = true;
+    private bool _active = true;
 
-    // Este método se llamará cuando el jugador choque con el cubo
     private void OnCollisionEnter(Collision collision)
     {
         // Verifica si el jugador (o el objeto que se espera) ha colisionado con el cubo
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (activo)
+            if (_active)
             {
-                // Activa la visibilidad del ratón y desbloquea el cursor
+                // Activa la visibilidad del ratï¿½n y desbloquea el cursor
                 Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;  // Libera el ratón
+                Cursor.lockState = CursorLockMode.None;  // Libera el ratï¿½n
 
-                // Habilita la interacción con la UI (si no está habilitada)
-                // Esto normalmente se maneja con el sistema de eventos de la UI, por lo que solo necesitas mostrar el ratón
+                // Habilita la interacciï¿½n con la UI (si no estï¿½ habilitada)
+                // Esto normalmente se maneja con el sistema de eventos de la UI, por lo que solo necesitas mostrar el ratï¿½n
 
-                activo = !activo;
+                _active = !_active;
             }
             else
             {
                 Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;  // Libera el ratón
-                activo = !activo;
+                Cursor.lockState = CursorLockMode.Locked;  // Libera el ratï¿½n
+                _active = !_active;
 
             }
         }

@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Interactor2000 : MonoBehaviour
 {
     private Ray _ray;
     private RaycastHit _hit;
-    public float maxInteractionDistance = 3f; // Distancia máxima para interactuar
-    public Transform player;
+    [SerializeField] private float _maxInteractionDistance = 3f; // Distancia máxima para interactuar
+    [SerializeField] private Transform _player;
 
     // Update is called once per frame
     void Update()
@@ -24,10 +25,10 @@ public class Interactor2000 : MonoBehaviour
                 GameObject hitObject = _hit.collider.gameObject;
 
                 // Calcular la distancia al objeto impactado
-                float distanceToObject = Vector3.Distance(player.position, _hit.point);
+                float distanceToObject = Vector3.Distance(_player.position, _hit.point);
 
                 // Comprobar si está dentro del rango de interacción
-                if (distanceToObject <= maxInteractionDistance)
+                if (distanceToObject <= _maxInteractionDistance)
                 {
                     // --- GUION ---
                     if (hitObject.GetComponent<Guion>() != null)
