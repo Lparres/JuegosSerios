@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 229100315}
   - component: {fileID: 229100316}
   - component: {fileID: 229100317}
+  - component: {fileID: 229100318}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -385,6 +386,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d93c8606a82ca4fb4c0f6afe8bc9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &229100318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229100309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398dc5717994ff94f9b90e631d1d7417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2074658750}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Acto1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2074658749}
+        m_TargetAssemblyTypeName: NarrativeManager, Assembly-CSharp
+        m_MethodName: AdvanceAct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Acto1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &304576411 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8251449542444506821, guid: 1171a69c13bae3c49b94a7c67a45ef7e, type: 3}
@@ -1401,6 +1441,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+--- !u!114 &2074658749 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1035317758714784077, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+  m_PrefabInstance: {fileID: 2074658748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d7063eda3f47149b17fae0419cd147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2074658750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8013339210529884292, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+  m_PrefabInstance: {fileID: 2074658748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795c67c883a64c6418a440df6b267a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -3,47 +3,43 @@ using UnityEngine;
 public class ActivadorDeParticulas : MonoBehaviour
 {
     [SerializeField]
-    private bool activo = false; // Variable que controla si se generan partículas o no
-
-    [SerializeField]
-    private GameObject prefabDeParticulas; // Prefab del sistema de partículas a instanciar
-
-    private GameObject particulasInstanciadas; // Referencia al sistema de partículas instanciado
+    private GameObject prefabDeParticulas; // Prefab del sistema de partï¿½culas a instanciar
+    private GameObject particulasInstanciadas; // Referencia al sistema de partï¿½culas instanciado
 
     void Update()
     {
-        // Controlar la activación y desactivación del sistema de partículas
-        if (activo && particulasInstanciadas == null)
+        // Controlar la activaciï¿½n y desactivaciï¿½n del sistema de partï¿½culas
+        if (particulasInstanciadas == null)
         {
             InstanciarParticulas();
         }
-        else if (!activo && particulasInstanciadas != null)
+        else if (particulasInstanciadas != null)
         {
             DestruirParticulas();
         }
     }
 
-    // Método para instanciar el sistema de partículas
+    // Mï¿½todo para instanciar el sistema de partï¿½culas
     private void InstanciarParticulas()
     {
         if (prefabDeParticulas == null)
         {
-            Debug.LogError("No se asignó un prefab de partículas en el Inspector.");
+            Debug.LogError("No se asignï¿½ un prefab de partï¿½culas en el Inspector.");
             return;
         }
 
-        // Instanciar el prefab con una rotación orientada hacia arriba
+        // Instanciar el prefab con una rotaciï¿½n orientada hacia arriba
         particulasInstanciadas = Instantiate(prefabDeParticulas, transform.position, Quaternion.identity);
 
-        // Asegurar que esté correctamente orientado (rotación vertical)
+        // Asegurar que estï¿½ correctamente orientado (rotaciï¿½n vertical)
         particulasInstanciadas.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-        // Opcional: Hacer que las partículas sigan al GameObject padre
+        // Opcional: Hacer que las partï¿½culas sigan al GameObject padre
         particulasInstanciadas.transform.parent = transform;
     }
 
 
-    // Método para destruir el sistema de partículas
+    // Mï¿½todo para destruir el sistema de partï¿½culas
     private void DestruirParticulas()
     {
         if (particulasInstanciadas != null)
@@ -51,16 +47,5 @@ public class ActivadorDeParticulas : MonoBehaviour
             Destroy(particulasInstanciadas);
             particulasInstanciadas = null;
         }
-    }
-
-    // Métodos públicos para modificar y obtener el estado
-    public void SetActivo(bool estado)
-    {
-        activo = estado;
-    }
-
-    public bool GetActivo()
-    {
-        return activo;
     }
 }

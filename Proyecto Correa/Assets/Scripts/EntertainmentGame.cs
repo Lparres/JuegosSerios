@@ -3,21 +3,25 @@ using UnityEngine;
 
 public class EntertainmentGame : MonoBehaviour
 {
-    [SerializeField] private SceneTransitionManager sceneTransitionManager;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private ActivadorDeParticulas _particles;
+    private BoxCollider _col;
 
-    // Update is called once per frame
-    void Update()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
     {
-        
+        _particles = GetComponent<ActivadorDeParticulas>();
+        _col = GetComponent<BoxCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        sceneTransitionManager.ChangeScene("MinijuegoEntretenimiento");
+        GameManager.Instance.ChangeScene("MinijuegoEntretenimiento");
+    }
+
+    public void SetState(bool state)
+    {
+        _particles.enabled = state;
+        _col.enabled = state;
+        enabled = state;
     }
 }

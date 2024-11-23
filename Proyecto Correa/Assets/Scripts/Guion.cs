@@ -14,12 +14,17 @@ public class Guion : MonoBehaviour
     private readonly TextAsset[][] _textAssets = new TextAsset[5][];
     
     private Story _inkStory;
+    private StoryEvent _event;
 
     public void NextDialogue()
     {
         Debug.Log("Next Dialogue");
         Vector2 storyPoint = NarrativeManager.Instance.StoryPoint;
         _inkStory = new Story(_textAssets[(int)storyPoint.x - 1][(int)storyPoint.y].text);
+        _inkStory.BindExternalFunction("StoryEvent", () =>
+        {
+            _event.OnStoryEvent();
+        });
     }
     
     public void NextLine()
@@ -37,6 +42,8 @@ public class Guion : MonoBehaviour
 
     void Start()
     {
+        _event = GetComponent<StoryEvent>();
+        
         _textAssets[0] = _act1TextAssets;
         _textAssets[1] = _act2TextAssets;
         _textAssets[2] = _act3TextAssets;

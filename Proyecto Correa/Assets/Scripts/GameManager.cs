@@ -17,6 +17,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
+    [SerializeField] private EntertainmentGame _entertainment;
+    [SerializeField] private WalkingGame _walk;
+    [SerializeField] private FoodGame _food;
+
+    public void CanPlayMiniGame(bool can)
+    {
+        _entertainment.SetState(can);
+    }
+    
     private void Awake()
     {
         if (Instance == null)

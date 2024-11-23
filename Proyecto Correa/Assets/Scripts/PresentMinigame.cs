@@ -4,16 +4,17 @@ public class PresentMinigame : MonoBehaviour
 {
     private Rigidbody[] _layers;
     private Drag3D _drag;
+    private StoryEvent _event;
     
     [SerializeField] private double _maxTravel;
     private int _level;
-
-    bool levelCompleted = false;
+    private bool _levelCompleted = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _drag = GetComponent<Drag3D>();
+        _event = GetComponent<StoryEvent>();
         
         _layers = new Rigidbody[transform.childCount];
         for (int i = 0; i < _layers.Length; i++)
@@ -32,17 +33,11 @@ public class PresentMinigame : MonoBehaviour
             _level++;
             _drag.ResetTraveledDistance();
 
-            if (_level == 3 && !levelCompleted)
+            if (_level == 3 && !_levelCompleted)
             {
-                levelCompleted = true;
-                completed();
+                _levelCompleted = true;
+                _event.OnStoryEvent();
             }
         }
-    }
-
-    void completed()
-    {
-        NarrativeManager.Instance.AdvanceAct();     // 1.1 --> 1.2
-        GameManager.Instance.ChangeScene("Acto1");
     }
 }
