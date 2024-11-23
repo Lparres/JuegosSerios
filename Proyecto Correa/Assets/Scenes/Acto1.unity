@@ -264,8 +264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _act1TextAssets:
   - {fileID: 4900000, guid: ea83a8cc127dc7746b8bc2c50f2e5fa9, type: 3}
+  - {fileID: 4900000, guid: 9573c85a01f1ab146b44c0d786e2b83b, type: 3}
   - {fileID: 4900000, guid: ed254bbfec0285c4ba5b5d2aaac6e96c, type: 3}
-  - {fileID: 0}
   _act2TextAssets: []
   _act3TextAssets: []
   _act4TextAssets: []
