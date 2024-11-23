@@ -12,9 +12,7 @@ public class SceneTransitionManager : MonoBehaviour
     private bool isFading = false;
 
     void Start()
-    {
-        
-
+    {     
         // Comenzar con un fade in
         StartCoroutine(FadeIn());
     }
