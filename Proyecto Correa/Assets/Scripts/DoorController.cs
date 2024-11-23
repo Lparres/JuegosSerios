@@ -19,7 +19,7 @@ public class DoorController : MonoBehaviour
 
         // Guardar las rotaciones inicial y final
         closedRotation = doorHinge.rotation;
-        openRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
+        openRotation = closedRotation * Quaternion.Euler(0, 0, -openAngle);
     }
 
     void Update()
