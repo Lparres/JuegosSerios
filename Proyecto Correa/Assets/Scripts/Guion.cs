@@ -14,35 +14,20 @@ public class Guion : MonoBehaviour
     private readonly TextAsset[][] _textAssets = new TextAsset[5][];
     
     private Story _inkStory;
-
-    private bool _interacting;
+    private StoryEvent _event;
 
     public void NextDialogue()
     {
         Debug.Log("Next Dialogue");
         Vector2 storyPoint = NarrativeManager.Instance.StoryPoint;
         _inkStory = new Story(_textAssets[(int)storyPoint.x - 1][(int)storyPoint.y].text);
-    }
-
-    public void LittleTalks()
-    {
-        if(!_interacting)
+        _inkStory.BindExternalFunction("StoryEvent", () =>
         {
-            StartDialogue();
-        }
-        else
-        {
-            NextLine();
-        }
+            _event.OnStoryEvent();
+        });
     }
-
-    private void StartDialogue()
-    {
-        _interacting = true;
-        NextLine();
-    }
-
-    private void NextLine()
+    
+    public void NextLine()
     {
         if (_inkStory.canContinue)
         {
@@ -50,7 +35,6 @@ public class Guion : MonoBehaviour
         }
         else
         {
-            _interacting = false;
             _inkStory.ResetState();
             GameManager.Instance.DialogueEnded();
         }
@@ -58,6 +42,8 @@ public class Guion : MonoBehaviour
 
     void Start()
     {
+        _event = GetComponent<StoryEvent>();
+        
         _textAssets[0] = _act1TextAssets;
         _textAssets[1] = _act2TextAssets;
         _textAssets[2] = _act3TextAssets;

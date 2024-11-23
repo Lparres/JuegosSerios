@@ -7,11 +7,14 @@ public class SceneTransitionManager : MonoBehaviour
 {
     public Image fadeImage; // Imagen usada para el fade
     private float fadeDuration = 2f; // Duración del fade
+    private float waitTimeBeforeFade = 2f; // Tiempo de espera antes del fade out
 
     private bool isFading = false;
 
     void Start()
     {
+        
+
         // Comenzar con un fade in
         StartCoroutine(FadeIn());
     }
@@ -52,6 +55,10 @@ public class SceneTransitionManager : MonoBehaviour
     private IEnumerator FadeOutAndChangeScene(string sceneName)
     {
         isFading = true;
+
+        // Esperar antes de comenzar el fade
+        yield return new WaitForSeconds(waitTimeBeforeFade);
+
         fadeImage.gameObject.SetActive(true);
         Color color = fadeImage.color;
         float timer = 0f;

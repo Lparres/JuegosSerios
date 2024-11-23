@@ -7,43 +7,39 @@ public class Interactor2000 : MonoBehaviour
     [SerializeField] private float _maxInteractionDistance = 3f; // Distancia máxima para interactuar
     [SerializeField] private Transform _player;
 
-    // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Crear un rayo desde la posición del ratón en pantalla
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // Crear un rayo desde la posición del ratón en pantalla
+        if (Camera.main != null) _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            // Realizar el raycast
-            if (Physics.Raycast(_ray, out _hit, 200))
-            {                                                                                   
-                GameObject hitObject = _hit.collider.gameObject;
+        // Realizar el raycast
+        if (Physics.Raycast(_ray, out _hit, 200))
+        {                                                                                   
+            GameObject hitObject = _hit.collider.gameObject;
 
-                // Calcular la distancia al objeto impactado
-                float distanceToObject = Vector3.Distance(_player.position, _hit.point);
+            // Calcular la distancia al objeto impactado
+            float distanceToObject = Vector3.Distance(_player.position, _hit.point);
 
-                // Comprobar si está dentro del rango de interacción
-                if (distanceToObject <= _maxInteractionDistance)
+            // Comprobar si está dentro del rango de interacción
+            if (distanceToObject <= _maxInteractionDistance)
+            {
+                // --- GUION ---
+                if (hitObject.TryGetComponent<Guion>(out Guion g))
                 {
-                    // --- GUION ---
-                    if (hitObject.TryGetComponent<Guion>(out Guion g))
-                    {
-                        g.LittleTalks();
-                    }
-                    // --- PUERTA ---
-                    else if (hitObject.TryGetComponent<DoorController>(out DoorController dc))
-                    {
-                        dc.ToggleDoor();
-                    }
+                    g.NextLine();
                 }
-
-                // --- MINIJUEGO COMIDA ---
-                /*else if (_hit.collider.gameObject.GetComponent<FoodGame>() != null)
+                // --- PUERTA ---
+                else if (hitObject.TryGetComponent<DoorController>(out DoorController dc))
                 {
-                    GameManager.Instance.ChangeScene("MinijuegoComida");
-                }*/
+                    dc.ToggleDoor();
+                }
             }
+
+            // --- MINIJUEGO COMIDA ---
+            /*else if (_hit.collider.gameObject.GetComponent<FoodGame>() != null)
+            {
+                GameManager.Instance.ChangeScene("MinijuegoComida");
+            }*/
         }
     }
 }

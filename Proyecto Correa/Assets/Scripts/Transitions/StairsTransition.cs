@@ -6,7 +6,7 @@ using System.Collections;
 public class StairsTransition : MonoBehaviour
 {
     public Image fadeImage; // Imagen usada para el fade
-    public float fadeDuration = 1f; // Duración del fade
+    public float fadeDuration = 1f; // DuraciÃ³n del fade
 
     public Transform objetivePos;
 
@@ -20,7 +20,7 @@ public class StairsTransition : MonoBehaviour
     }
 
     /// <summary>
-    /// Llamar a este método para cambiar de escena con un fade out y fade in.
+    /// Llamar a este mÃ©todo para cambiar de escena con un fade out y fade in.
     /// </summary>
     public void ChangePosition()
     {

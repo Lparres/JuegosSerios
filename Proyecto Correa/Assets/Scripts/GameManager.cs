@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // Singleton del GameManager
     public static GameManager Instance { get; private set; }
-
-    [SerializeField] private UIManager _ui;
+    public UIManager UI { get; private set; } 
+    
     [SerializeField] private ProgressBarController _progressBarController;
     [SerializeField] private SceneTransitionManager _sceneTransitionManager;
     [SerializeField] private NarrativeManager _narrativeManager;
@@ -15,11 +16,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
+    [SerializeField] private EntertainmentGame _entertainment;
+    [SerializeField] private WalkingGame _walk;
+    [SerializeField] private FoodGame _food;
+
+    public void CanPlayMiniGame(bool can)
+    {
+        _entertainment.SetState(can);
+    }
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            UI = transform.GetChild(0).GetChild(0).gameObject.GetComponent<UIManager>();
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -27,19 +38,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
-    {
-        //Debug.Log("Acto " + _currentAct + " Sub�ndice " + _subIndexAct);
-    }
+    
     public void NextLine(string text)
     {
-        _ui.ChangeDialogue(text);
+        UI.ChangeDialogue(text);
     }
 
     public void DialogueEnded()
     {
-        _ui.OnDialogueEnd();
+        UI.OnDialogueEnd();
     }
 
     public void ChangeScene(string sceneName)
