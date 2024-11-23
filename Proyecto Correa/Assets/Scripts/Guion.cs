@@ -15,34 +15,14 @@ public class Guion : MonoBehaviour
     
     private Story _inkStory;
 
-    private bool _interacting;
-
     public void NextDialogue()
     {
         Debug.Log("Next Dialogue");
         Vector2 storyPoint = NarrativeManager.Instance.StoryPoint;
         _inkStory = new Story(_textAssets[(int)storyPoint.x - 1][(int)storyPoint.y].text);
     }
-
-    public void LittleTalks()
-    {
-        if(!_interacting)
-        {
-            StartDialogue();
-        }
-        else
-        {
-            NextLine();
-        }
-    }
-
-    private void StartDialogue()
-    {
-        _interacting = true;
-        NextLine();
-    }
-
-    private void NextLine()
+    
+    public void NextLine()
     {
         if (_inkStory.canContinue)
         {
@@ -50,7 +30,6 @@ public class Guion : MonoBehaviour
         }
         else
         {
-            _interacting = false;
             _inkStory.ResetState();
             GameManager.Instance.DialogueEnded();
         }
