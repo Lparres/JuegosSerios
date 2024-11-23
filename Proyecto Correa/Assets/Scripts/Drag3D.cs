@@ -34,7 +34,6 @@ public class Drag3D : MonoBehaviour
             _tr.position = new Vector3(mouseWorldPoint.x, mouseWorldPoint.y, aux.z);
 
             Traveled += (_tr.position - aux).magnitude;
-            Debug.Log(Traveled);
         }
     }
 

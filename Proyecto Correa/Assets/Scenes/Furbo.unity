@@ -786,6 +786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5058244336987401819, guid: 1171a69c13bae3c49b94a7c67a45ef7e, type: 3}
+      propertyPath: m_TagString
+      value: FadeImg
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

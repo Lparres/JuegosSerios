@@ -13,6 +13,8 @@ public class SceneTransitionManager : MonoBehaviour
 
     void Start()
     {
+        
+
         // Comenzar con un fade in
         StartCoroutine(FadeIn());
     }

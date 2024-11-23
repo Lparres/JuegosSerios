@@ -28,15 +28,16 @@ public class PresentMinigame : MonoBehaviour
     {
         if (_drag.Traveled >= _maxTravel)
         {
-            Debug.Log("CAE");
             _layers[_level].useGravity = true;
             _level++;
             _drag.ResetTraveledDistance();
 
             if (_level == 3 && !_levelCompleted)
             {
+                Debug.Log("LevelState" + _levelCompleted);
                 _levelCompleted = true;
-                _event.OnStoryEvent();
+                NarrativeManager.Instance.AdvanceAct();
+                GameManager.Instance.ChangeScene("Acto1");
             }
         }
     }
