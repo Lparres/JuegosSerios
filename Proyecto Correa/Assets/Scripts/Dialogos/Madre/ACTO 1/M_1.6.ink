@@ -1,2 +1,1 @@
-﻿Espero que te guste tu regalo
-Podrías ir fuera a probarlo con tu hermanito
+﻿Ya es la hora de dormir, ve yendo a tu dormitorio y descansa bien.

@@ -1,2 +1,2 @@
-﻿Espero que te guste tu regalo
-Podrías ir fuera a probarlo con tu hermanito
+﻿Has corrido mucho, toca merendar.
+Vamos a la cocina a ver que hay.
