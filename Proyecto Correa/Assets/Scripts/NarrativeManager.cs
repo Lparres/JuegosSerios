@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class NarrativeManager : MonoBehaviour
@@ -10,14 +11,10 @@ public class NarrativeManager : MonoBehaviour
     public int SubIndex { get { return _subIndexAct; } }
     
     public Vector2 StoryPoint { get { return new Vector2(_currentAct, _subIndexAct); } }
-    
-    [SerializeField] private Guion[] _scripts;
 
     public void AdvanceAct()
     {
         _subIndexAct++;
-        foreach(Guion g in _scripts)
-            g.NextDialogue();
     }
     
     public void NextAct()
