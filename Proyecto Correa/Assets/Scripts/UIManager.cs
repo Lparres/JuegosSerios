@@ -8,13 +8,17 @@ public class UIManager : MonoBehaviour
     private GameObject _dialogue;
     private TMP_Text _message;
     private string _sentence;
-    
+    public bool Typing { get; private set; }
+
     public void ChangeDialogue(string text)
     {
-        _dialogue.SetActive(true);
-        _sentence = text;
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence());
+        if (!Typing) 
+        {
+            _dialogue.SetActive(true);
+            _sentence = text;
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence());
+        }
     }
 
     public void OnDialogueEnd()
@@ -24,18 +28,24 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator TypeSentence()
     {
+        Typing = true;
         _message.text = "";
         foreach (char letter in _sentence.ToCharArray())
         {
             _message.text += letter;
             yield return new WaitForSeconds(0.1f);
         }
+
+        Typing = false;
     }
 
     public void Skip()
     {
-        StopAllCoroutines();
-        _message.text = _sentence;
+        if (Typing) {
+            StopAllCoroutines();
+            _message.text = _sentence;
+            Typing = false;
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

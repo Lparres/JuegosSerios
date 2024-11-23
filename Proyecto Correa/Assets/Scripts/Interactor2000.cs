@@ -26,7 +26,7 @@ public class Interactor2000 : MonoBehaviour
                 // --- GUION ---
                 if (hitObject.TryGetComponent<Guion>(out Guion g))
                 {
-                    g.LittleTalks();
+                    g.NextLine();
                 }
                 // --- PUERTA ---
                 else if (hitObject.TryGetComponent<DoorController>(out DoorController dc))
