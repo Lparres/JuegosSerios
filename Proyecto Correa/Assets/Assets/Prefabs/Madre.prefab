@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5874646
+      value: -2.902
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.840232
+      value: -3.339
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -110,6 +110,10 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 46c01dbc788254946a190c2dd314125a, type: 3}
   - {fileID: 4900000, guid: 5b3fb00d3c8331f4bad36a918a9ead3c, type: 3}
   - {fileID: 4900000, guid: 73572090a5cc94f4fb9a1dd2681be9f4, type: 3}
+  - {fileID: 4900000, guid: 897c69e38584b4b4fa9e9dc9108e720e, type: 3}
+  - {fileID: 4900000, guid: 2c8f2700ecfdddb4ba6cce086fd80a6f, type: 3}
+  - {fileID: 4900000, guid: 1ed87dd4b14afbd4ca300edc6c85837b, type: 3}
+  - {fileID: 4900000, guid: f56f7a00af1773f478f06c9c2a835ffb, type: 3}
   _act2TextAssets: []
   _act3TextAssets: []
   _act4TextAssets: []

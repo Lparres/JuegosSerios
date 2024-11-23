@@ -43,8 +43,7 @@ public class GoalDetector : MonoBehaviour
 
             if (score >= goalsToWin)
             {
-                NarrativeManager.Instance.AdvanceAct();
-                Debug.Log("Cambio Escena");
+                //NarrativeManager.Instance.AdvanceAct();
                 GameManager.Instance.ChangeScene("Acto1");
             }
         }

@@ -1,2 +1,2 @@
-﻿Espero que te guste tu regalo
-Podrías ir fuera a probarlo con tu hermanito
+﻿Te lo estás pasando muy bien por lo que veo.
+Papá y yo queremos que disfruteis mucho los regalos.

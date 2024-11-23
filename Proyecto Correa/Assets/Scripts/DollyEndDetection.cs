@@ -25,7 +25,7 @@ public class DollyEndDetection : MonoBehaviour
 
     private void changeScene()
     {
-        NarrativeManager.Instance.AdvanceAct();     // 1.0 --> 1.1
+        //NarrativeManager.Instance.AdvanceAct();     // 1.0 --> 1.1
         GameManager.Instance.ChangeScene("MinijuegoRegalo");
     }
 }
