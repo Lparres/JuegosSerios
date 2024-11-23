@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
 
     public void ChangeDialogue(string text)
     {
-        if (!Typing) 
+        if (!Typing && text.Length != 0) 
         {
             _dialogue.SetActive(true);
             _sentence = text;

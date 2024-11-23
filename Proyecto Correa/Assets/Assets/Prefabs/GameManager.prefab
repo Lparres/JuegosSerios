@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795c67c883a64c6418a440df6b267a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ui: {fileID: 1175983899386312114}
   _progressBarController: {fileID: 1343212845825670904}
   _sceneTransitionManager: {fileID: 5867996211562933298}
   _narrativeManager: {fileID: -1035317758714784077}
@@ -81,8 +80,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentAct: 1
-  _subIndexAct: 0
-  _scripts: []
+  _subIndexAct: 2
+  _scripts:
+  - {fileID: 3296283815221853208, guid: c6e2830d291f7d44b84438f2c00cd9ef, type: 3}
+  - {fileID: 1921439915452425708, guid: d13eb8a1c2d1595418d082d4c806fc3f, type: 3}
 --- !u!1001 &7121007416292486007
 PrefabInstance:
   m_ObjectHideFlags: 0
