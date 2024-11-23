@@ -32,7 +32,7 @@ public class PresentMinigame : MonoBehaviour
             _level++;
             _drag.ResetTraveledDistance();
 
-            if (_level == 3)
+            if (_level == 3 && !levelCompleted)
             {
                 levelCompleted = true;
                 completed();

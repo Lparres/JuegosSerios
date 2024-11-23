@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public UIManager UI { get { return _ui; } } 
     
     [SerializeField] private ProgressBarController _progressBarController;
-    [SerializeField] private ProgressBarController _progressBarController;
     [SerializeField] private SceneTransitionManager _sceneTransitionManager;
     [SerializeField] private NarrativeManager _narrativeManager;
 
