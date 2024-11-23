@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private UIManager _ui;
-    [SerializeField] private ProgressBarController _progressBarController;
+    public UIManager UI { get { return _ui; } } 
     
+    [SerializeField] private ProgressBarController _progressBarController;
+
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
@@ -25,11 +27,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
-    {
-        //Debug.Log("Acto " + _currentAct + " Sub�ndice " + _subIndexAct);
-    }
+    
     public void NextLine(string text)
     {
         _ui.ChangeDialogue(text);
