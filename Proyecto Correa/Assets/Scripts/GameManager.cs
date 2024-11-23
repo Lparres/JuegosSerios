@@ -55,6 +55,20 @@ public class GameManager : MonoBehaviour
         _sceneTransitionManager.ChangeScene(sceneName);
     }
 
+    public void IntroAct(int act)
+    {
+        
+        switch (act)
+        {
+            case 0:
+                break;
+            case 1:
+                UI.intro1.SetActive(true);
+                UI.intro1.GetComponent<IntroSequence>().playIntro();
+                break;
+        }
+    }
+
     #region MEDIDORES
     public void UpdateHunger(float amount)
     {

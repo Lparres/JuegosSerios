@@ -857,6 +857,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &680577476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8231197908288800744, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+  m_PrefabInstance: {fileID: 1555854455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &725471624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,7 +1307,6 @@ GameObject:
   - component: {fileID: 1410188691}
   - component: {fileID: 1410188690}
   - component: {fileID: 1410188689}
-  - component: {fileID: 1410188688}
   m_Layer: 0
   m_Name: Porteria
   m_TagString: Untagged
@@ -1304,45 +1314,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1410188688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410188687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398dc5717994ff94f9b90e631d1d7417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _storyEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1555854456}
-        m_TargetAssemblyTypeName: NarrativeManager, Assembly-CSharp
-        m_MethodName: AdvanceAct
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1555854457}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Acto1
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1410188689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,7 +1580,7 @@ PrefabInstance:
     - target: {fileID: 5867996211562933298, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: fadeImage
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 680577476}
     - target: {fileID: 6911032728382455193, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1631,28 +1602,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
---- !u!114 &1555854456 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1035317758714784077, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
-  m_PrefabInstance: {fileID: 1555854455}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d7063eda3f47149b17fae0419cd147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1555854457 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8013339210529884292, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
-  m_PrefabInstance: {fileID: 1555854455}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795c67c883a64c6418a440df6b267a81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1637483144
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject intro1;
+    public GameObject intro2;
+    public GameObject intro3;
+    public GameObject intro4;
+
     private GameObject _dialogue;
     private TMP_Text _message;
     private string _sentence;

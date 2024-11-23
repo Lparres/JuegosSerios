@@ -43,8 +43,9 @@ public class GoalDetector : MonoBehaviour
 
             if (score >= goalsToWin)
             {
-                Debug.Log("FUrbo completado!");
-                storyEvent_.OnStoryEvent();
+                NarrativeManager.Instance.AdvanceAct();
+                Debug.Log("Cambio Escena");
+                GameManager.Instance.ChangeScene("Acto1");
             }
         }
     }

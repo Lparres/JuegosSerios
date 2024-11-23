@@ -18,6 +18,10 @@ public class IntroSequence : MonoBehaviour
 
     void Start()
     {
+
+    }
+    public void playIntro()
+    {
         StartCoroutine(IntroSequenceCoroutine());
     }
 
@@ -42,6 +46,7 @@ public class IntroSequence : MonoBehaviour
         yield return StartCoroutine(FadeImage(backgroundImage, 1f, 0f, backgroundFadeOutDuration));
 
         // 7. Activar medidores
+        //yield return new WaitForSeconds(3f);
         //barsParent.SetActive(true);
     }
 
