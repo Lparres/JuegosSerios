@@ -701,6 +701,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df375beb0f53864eb21c5359688106c, type: 3}
+--- !u!114 &1614748089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8231197908288800744, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+  m_PrefabInstance: {fileID: 1651939948348070051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653416751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5731994982980497896, guid: d9d475a2872c80d458a474f89395ad45, type: 3}
@@ -719,7 +730,6 @@ GameObject:
   - component: {fileID: 1728729924}
   - component: {fileID: 1728729923}
   - component: {fileID: 1728729922}
-  - component: {fileID: 1728729926}
   m_Layer: 0
   m_Name: "EntradaJard\xEDn"
   m_TagString: Untagged
@@ -828,19 +838,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728729920}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1728729926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728729920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bed40da526c868498808c208e571888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeImage: {fileID: 0}
 --- !u!1 &2084108804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1045,7 @@ PrefabInstance:
     - target: {fileID: 5867996211562933298, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: fadeImage
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1614748089}
     - target: {fileID: 6911032728382455193, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: m_Name
       value: GameManager
