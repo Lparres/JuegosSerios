@@ -103,7 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03924c11c5f30e40ae5f424a917c563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   _act1TextAssets:
   - {fileID: 4900000, guid: ea83a8cc127dc7746b8bc2c50f2e5fa9, type: 3}
   - {fileID: 4900000, guid: 9573c85a01f1ab146b44c0d786e2b83b, type: 3}
@@ -112,9 +111,6 @@ MonoBehaviour:
   - {fileID: 4900000, guid: e0e7f59312a6013429730e658dd52465, type: 3}
   - {fileID: 4900000, guid: ec616699760708846a03a6523905b010, type: 3}
   - {fileID: 4900000, guid: e155833dff6c5644786c8a6d9c317bf2, type: 3}
-=======
-  _act1TextAssets: []
->>>>>>> Stashed changes
   _act2TextAssets: []
   _act3TextAssets: []
   _act4TextAssets: []
