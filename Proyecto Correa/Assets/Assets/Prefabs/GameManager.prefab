@@ -80,10 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentAct: 1
-  _subIndexAct: 2
-  _scripts:
-  - {fileID: 3296283815221853208, guid: c6e2830d291f7d44b84438f2c00cd9ef, type: 3}
-  - {fileID: 1921439915452425708, guid: d13eb8a1c2d1595418d082d4c806fc3f, type: 3}
+  _subIndexAct: 0
 --- !u!1001 &7121007416292486007
 PrefabInstance:
   m_ObjectHideFlags: 0

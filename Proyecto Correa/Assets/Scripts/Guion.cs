@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Dynamic;
 using Ink.Runtime;
 using UnityEngine;
@@ -5,51 +6,66 @@ using UnityEngine;
 public class Guion : MonoBehaviour
 {
     // Set this file to your compiled json asset
-    [SerializeField] private TextAsset[] _act1TextAssets;
-    [SerializeField] private TextAsset[] _act2TextAssets;
-    [SerializeField] private TextAsset[] _act3TextAssets;
-    [SerializeField] private TextAsset[] _act4TextAssets;
-    [SerializeField] private TextAsset[] _act5TextAssets;
+    [SerializeField] private List<TextAsset> _act1TxtAssets;
+    [SerializeField] private List<TextAsset> _act2TxtAssets;
+    [SerializeField] private List<TextAsset> _act3TxtAssets;
+    [SerializeField] private List<TextAsset> _act4TxtAssets;
+    [SerializeField] private List<TextAsset> _act5TxtAssets;
 
-    private readonly TextAsset[][] _textAssets = new TextAsset[5][];
+    private List<List<TextAsset>> _textAssets;
     
-    private Story _inkStory;
+    private List<List<Story>> _inkStories;
+    
     private StoryEvent _event;
 
-    public void NextDialogue()
-    {
-        Debug.Log("Next Dialogue");
-        Vector2 storyPoint = NarrativeManager.Instance.StoryPoint;
-        _inkStory = new Story(_textAssets[(int)storyPoint.x - 1][(int)storyPoint.y].text);
-        _inkStory.BindExternalFunction("StoryEvent", () =>
-        {
-            _event.OnStoryEvent();
-        });
-    }
-    
     public void NextLine()
     {
-        if (_inkStory.canContinue)
+        Vector2 point = NarrativeManager.Instance.StoryPoint;
+        Story activeStory = _inkStories[(int)point.x][(int)point.y];
+        
+        if (activeStory.canContinue)
         {
-            GameManager.Instance.NextLine(_inkStory.Continue());
+            GameManager.Instance.NextLine(activeStory.Continue());
         }
         else
         {
-            _inkStory.ResetState();
+            activeStory.ResetState();
             GameManager.Instance.DialogueEnded();
+        }
+    }
+
+    private void SetStories()
+    {
+        foreach (List<TextAsset> act in _textAssets)
+        {
+            List<Story> actStories = new List<Story>();
+            foreach (TextAsset asset in act)
+            {
+                Story s = new Story(asset.text);
+                s.BindExternalFunction("StoryEvent", () =>
+                {
+                    _event.OnStoryEvent();
+                });
+                
+                actStories.Add(s);
+            }
+            
+            _inkStories.Add(actStories);
         }
     }
 
     void Start()
     {
+        _textAssets = new List<List<TextAsset>>();
+        _inkStories = new List<List<Story>>();
         _event = GetComponent<StoryEvent>();
         
-        _textAssets[0] = _act1TextAssets;
-        _textAssets[1] = _act2TextAssets;
-        _textAssets[2] = _act3TextAssets;
-        _textAssets[3] = _act4TextAssets;
-        _textAssets[4] = _act5TextAssets;
+        _textAssets.Add(_act1TxtAssets);
+        _textAssets.Add(_act2TxtAssets);
+        _textAssets.Add(_act3TxtAssets);
+        _textAssets.Add(_act4TxtAssets);
+        _textAssets.Add(_act5TxtAssets);
 
-        NextDialogue();
+        SetStories();
     }
 }
