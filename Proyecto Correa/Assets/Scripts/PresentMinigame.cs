@@ -7,6 +7,8 @@ public class PresentMinigame : MonoBehaviour
     
     [SerializeField] private double _maxTravel;
     private int _level;
+
+    bool levelCompleted = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,9 +34,15 @@ public class PresentMinigame : MonoBehaviour
 
             if (_level == 3)
             {
-                NarrativeManager.Instance.AdvanceAct();
-                GameManager.Instance.ChangeScene("Acto1");
+                levelCompleted = true;
+                completed();
             }
         }
+    }
+
+    void completed()
+    {
+        NarrativeManager.Instance.AdvanceAct();     // 1.1 --> 1.2
+        GameManager.Instance.ChangeScene("Acto1");
     }
 }
