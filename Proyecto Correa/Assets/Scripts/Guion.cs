@@ -45,7 +45,9 @@ public class Guion : MonoBehaviour
                 Story s = new Story(asset.text);
                 s.BindExternalFunction("StoryEvent", () =>
                 {
+                    Debug.Log("CALLBACK");
                     _event[0].Invoke();
+                    _event[0].AddListener(() => {});
                 });
                 
                 actStories.Add(s);
