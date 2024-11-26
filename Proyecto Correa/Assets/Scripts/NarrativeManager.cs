@@ -12,6 +12,8 @@ public class NarrativeManager : MonoBehaviour
     
     public Vector2 StoryPoint { get { return new Vector2(_currentAct, _subIndexAct); } }
 
+    public float MeterThreshold { get; private set; } = 10;
+
     public void AdvanceAct()
     {
         _subIndexAct++;
@@ -23,6 +25,8 @@ public class NarrativeManager : MonoBehaviour
         _subIndexAct = 0;
     }
 
+    
+    
     void Awake()
     {
         if (Instance == null)
