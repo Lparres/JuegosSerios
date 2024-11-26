@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using Ink.Runtime;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Guion : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Guion : MonoBehaviour
     
     private List<List<Story>> _inkStories;
     
-    private StoryEvent _event;
+    [SerializeField] private List<UnityEvent> _event;
 
     public void NextLine()
     {
@@ -44,7 +45,7 @@ public class Guion : MonoBehaviour
                 Story s = new Story(asset.text);
                 s.BindExternalFunction("StoryEvent", () =>
                 {
-                    _event.OnStoryEvent();
+                    _event[0].Invoke();
                 });
                 
                 actStories.Add(s);
@@ -58,7 +59,6 @@ public class Guion : MonoBehaviour
     {
         _textAssets = new List<List<TextAsset>>();
         _inkStories = new List<List<Story>>();
-        _event = GetComponent<StoryEvent>();
         
         _textAssets.Add(_act1TxtAssets);
         _textAssets.Add(_act2TxtAssets);

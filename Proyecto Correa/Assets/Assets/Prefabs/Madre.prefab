@@ -85,9 +85,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 398165881882310486}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8082693480862686805}
   m_SourcePrefab: {fileID: 100100000, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
 --- !u!1 &5564821490304665725 stripped
 GameObject:
@@ -118,6 +115,7 @@ MonoBehaviour:
   _act3TxtAssets: []
   _act4TxtAssets: []
   _act5TxtAssets: []
+  _event: []
 --- !u!136 &8863227352661274916
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -168,30 +166,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &8082693480862686805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5564821490304665725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398dc5717994ff94f9b90e631d1d7417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _storyEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CanPlayMiniGame
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2

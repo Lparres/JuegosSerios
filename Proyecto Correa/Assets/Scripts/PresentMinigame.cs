@@ -16,10 +16,10 @@ public class PresentMinigame : MonoBehaviour
         _drag = GetComponent<Drag3D>();
         _event = GetComponent<StoryEvent>();
         
-        _layers = new Rigidbody[transform.childCount];
+        _layers = new Rigidbody[transform.childCount - 1];
         for (int i = 0; i < _layers.Length; i++)
         {
-            _layers[i] = transform.GetChild(i).gameObject.GetComponent<Rigidbody>();
+            _layers[i] = transform.GetChild(i + 1).gameObject.GetComponent<Rigidbody>();
         }
     }
 
@@ -28,11 +28,14 @@ public class PresentMinigame : MonoBehaviour
     {
         if (_drag.Traveled >= _maxTravel)
         {
-            _layers[_level].useGravity = true;
-            _level++;
+            for (int i = _level; i < _level + 10; i++)
+            {
+                _layers[i].useGravity = true;
+            }
+            _level += 10;
             _drag.ResetTraveledDistance();
 
-            if (_level == 3 && !_levelCompleted)
+            if (_level == 30 && !_levelCompleted)
             {
                 Debug.Log("LevelState" + _levelCompleted);
                 _levelCompleted = true;

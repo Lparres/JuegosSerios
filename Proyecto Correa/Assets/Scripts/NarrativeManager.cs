@@ -20,6 +20,7 @@ public class NarrativeManager : MonoBehaviour
     public void NextAct()
     {
         _currentAct++;
+        _subIndexAct = 0;
     }
 
     void Awake()
