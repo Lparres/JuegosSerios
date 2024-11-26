@@ -134,11 +134,11 @@ GameObject:
   - component: {fileID: 52717399}
   m_Layer: 0
   m_Name: EntradaCalle
-  m_TagString: Untagged
+  m_TagString: EntradaSitios
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &52717398
 Transform:
   m_ObjectHideFlags: 0
@@ -148,8 +148,8 @@ Transform:
   m_GameObject: {fileID: 52717397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.389, z: 4.245}
-  m_LocalScale: {x: 1, y: 1, z: 0.18517}
+  m_LocalPosition: {x: -0.004, y: 0.389, z: 4.25}
+  m_LocalScale: {x: 1, y: 1, z: 0.001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147929279}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 755523179}
   m_Layer: 0
   m_Name: EntradaCocina
-  m_TagString: Untagged
+  m_TagString: EntradaSitios
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +303,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.453, y: 0.437, z: -0.252}
-  m_LocalScale: {x: 1, y: 1, z: 0.18517}
+  m_LocalScale: {x: 1, y: 1, z: 0.001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147929279}
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755523173}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b851d40ac7961945887824a5581a6f3, type: 3}
   m_Name: 
@@ -458,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1147929279
 Transform:
   m_ObjectHideFlags: 0
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 1728729922}
   m_Layer: 0
   m_Name: "EntradaJard\xEDn"
-  m_TagString: Untagged
+  m_TagString: EntradaSitios
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -808,8 +808,8 @@ Transform:
   m_GameObject: {fileID: 1728729920}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.29, y: 0.446, z: -4.247}
-  m_LocalScale: {x: 2.0662498, y: 1, z: 0.18517}
+  m_LocalPosition: {x: 1.29, y: 0.446, z: -5.332}
+  m_LocalScale: {x: 2.0662498, y: 1, z: 0.001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147929279}

@@ -21,7 +21,7 @@ public class Interactor2000 : MonoBehaviour
             float distanceToObject = Vector3.Distance(_player.position, _hit.point);
 
             // Comprobar si está dentro del rango de interacción
-            if (distanceToObject <= _maxInteractionDistance)
+            if (distanceToObject <= _maxInteractionDistance)  // && !hitObject.CompareTag("EntradaSitios"
             {
                 // --- GUION ---
                 if (hitObject.TryGetComponent<Guion>(out Guion g))

@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03924c11c5f30e40ae5f424a917c563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _act1TextAssets:
+  _act1TxtAssets:
   - {fileID: 4900000, guid: 46c01dbc788254946a190c2dd314125a, type: 3}
   - {fileID: 4900000, guid: 5b3fb00d3c8331f4bad36a918a9ead3c, type: 3}
   - {fileID: 4900000, guid: 73572090a5cc94f4fb9a1dd2681be9f4, type: 3}
@@ -114,10 +114,10 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 2c8f2700ecfdddb4ba6cce086fd80a6f, type: 3}
   - {fileID: 4900000, guid: 1ed87dd4b14afbd4ca300edc6c85837b, type: 3}
   - {fileID: 4900000, guid: f56f7a00af1773f478f06c9c2a835ffb, type: 3}
-  _act2TextAssets: []
-  _act3TextAssets: []
-  _act4TextAssets: []
-  _act5TextAssets: []
+  _act2TxtAssets: []
+  _act3TxtAssets: []
+  _act4TxtAssets: []
+  _act5TxtAssets: []
 --- !u!136 &8863227352661274916
 CapsuleCollider:
   m_ObjectHideFlags: 0

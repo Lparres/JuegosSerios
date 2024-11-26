@@ -1187,7 +1187,7 @@ MonoBehaviour:
     - rid: 6161012770277949442
       type: {class: SplineAutoDolly/FixedSpeed, ns: Unity.Cinemachine, asm: Unity.Cinemachine}
       data:
-        Speed: 0.8
+        Speed: 0.1
 --- !u!114 &1670786466
 MonoBehaviour:
   m_ObjectHideFlags: 0
