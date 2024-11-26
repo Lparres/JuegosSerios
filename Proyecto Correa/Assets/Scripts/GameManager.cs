@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private WalkingGame _walk;
     [SerializeField] private FoodGame _food;
 
+    private float _time;
+    
     public void CanPlayMiniGame(bool can)
     {
         _entertainment.SetState(can);
@@ -38,7 +40,19 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void Update()
+    {
+        if (_time == NarrativeManager.Instance.MeterThreshold)
+        {
+            _time = 0;
+            UpdateHunger(-1);
+            UpdateWalk(-1);
+            UpdateEntertainment(-1);
+        }
+        else _time += Time.deltaTime;
+    }
+
     public void NextLine(string text)
     {
         UI.ChangeDialogue(text);
