@@ -22,7 +22,7 @@ public class Guion : MonoBehaviour
     public void NextLine()
     {
         Vector2 point = NarrativeManager.Instance.StoryPoint;
-        Story activeStory = _inkStories[(int)point.x][(int)point.y];
+        Story activeStory = _inkStories[(int)point.x - 1][(int)point.y];
         
         if (activeStory.canContinue)
         {
