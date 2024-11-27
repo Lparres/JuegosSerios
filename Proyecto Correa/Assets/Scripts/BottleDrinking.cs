@@ -45,6 +45,6 @@ public class BottleDrinking : MonoBehaviour
     {
         isDrinking = false;
         Debug.Log(timer + " segs");
-        GameManager.Instance.ChangeScene("Acto1");
+        //GameManager.Instance.ChangeScene("Acto1");
     }
 }
