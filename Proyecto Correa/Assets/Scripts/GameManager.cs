@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // Singleton del GameManager
     public static GameManager Instance { get; private set; }
-    public UIManager UI { get; private set; } 
+    [SerializeField] private UIManager _ui;
+    public UIManager UI { get { return _ui; } }
     
     [SerializeField] private ProgressBarController _progressBarController;
     [SerializeField] private SceneTransitionManager _sceneTransitionManager;
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private WalkingGame _walk;
     [SerializeField] private FoodGame _food;
 
+    [SerializeField] private GlobalEventRegistry _eventRegistry;
+    
     private float _time;
     
     public void CanPlayMiniGame(bool can)
@@ -32,12 +35,32 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            UI = transform.GetChild(0).GetChild(0).gameObject.GetComponent<UIManager>();
             DontDestroyOnLoad(gameObject);
+            if (_eventRegistry != null)
+            {
+                GlobalEvent globalEvent = _eventRegistry.GetEventByName("ChangeSceneEvent");
+                if (globalEvent is StringEvent stringEvent)
+                {
+                    stringEvent.RegisterListener(ChangeScene);
+                }
+            }
         }
         else
         {
             Destroy(gameObject);
+        }
+    }
+    
+    void OnDestroy()
+    {
+        // Quitar registros al destruir el objeto
+        if (_eventRegistry != null)
+        {
+            GlobalEvent changeSceneEvent = _eventRegistry.GetEventByName("ChangeSceneEvent");
+            if (changeSceneEvent is StringEvent stringEvent)
+            {
+                stringEvent.UnregisterListener(ChangeScene);
+            }
         }
     }
 
@@ -60,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void DialogueEnded()
     {
+        Debug.Log(UI);
         UI.OnDialogueEnd();
     }
 

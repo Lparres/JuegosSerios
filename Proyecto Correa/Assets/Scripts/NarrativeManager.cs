@@ -16,7 +16,7 @@ public class NarrativeManager : MonoBehaviour
 
     public float MeterThreshold { get; private set; } = 10;
 
-    [SerializeField] private List<GlobalEvent> _storyEvents;
+    [SerializeField] private GlobalEventRegistry _eventRegistry;
 
     public void AdvanceAct()
     {
@@ -31,28 +31,12 @@ public class NarrativeManager : MonoBehaviour
 
     public void EventByName(string eventName, string info)
     {
-        foreach (GlobalEvent globalEvent in _storyEvents)
+        if (_eventRegistry != null)
         {
-            if (globalEvent is StringEvent stringEvent && stringEvent.name == eventName)
+            GlobalEvent globalEvent = _eventRegistry.GetEventByName(eventName);
+            if (globalEvent is StringEvent stringEvent)
             {
                 stringEvent.Raise(info);
-                return;
-            }
-        }
-    }
-
-    private void Start()
-    {
-        foreach (GlobalEvent e in _storyEvents)
-        {
-            if (e is StringEvent s)
-            {
-                switch (s.name)
-                {
-                    case "ChangeSceneEvent":
-                        s.RegisterListener(info => GameManager.Instance.ChangeScene(info));
-                        break;
-                }
             }
         }
     }

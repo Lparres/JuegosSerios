@@ -1,7 +1,8 @@
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "StringEvent", menuName = "Event/StringEvent")]
+[CreateAssetMenu(fileName = "ChangeSceneEvent", menuName = "Event/StringEvent")]
 public class StringEvent : GlobalEvent
 {
     private Action<string> _onEventRaised;
@@ -15,13 +16,13 @@ public class StringEvent : GlobalEvent
     {
         _onEventRaised?.Invoke(message);
     }
-
-    public void RegisterListener(Action<string> listener)
+    
+    public void RegisterListener(System.Action<string> listener)
     {
         _onEventRaised += listener;
     }
 
-    public void UnregisterListener(Action<string> listener)
+    public void UnregisterListener(System.Action<string> listener)
     {
         _onEventRaised -= listener;
     }
