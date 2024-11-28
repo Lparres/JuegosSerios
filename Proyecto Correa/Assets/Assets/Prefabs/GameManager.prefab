@@ -81,6 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentAct: 1
   _subIndexAct: 0
+  _storyEvents:
+  - {fileID: 11400000, guid: c8900b4d5a4b0f34fa96876f3c39972c, type: 2}
 --- !u!1001 &7121007416292486007
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         Debug.Log(sceneName + " [Cambio Escena]");
+        DialogueEnded();
         _sceneTransitionManager.ChangeScene(sceneName);
     }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Ink.Parsed;
 using UnityEngine;
 
 public class NarrativeManager : MonoBehaviour
@@ -14,6 +16,8 @@ public class NarrativeManager : MonoBehaviour
 
     public float MeterThreshold { get; private set; } = 10;
 
+    [SerializeField] private List<GlobalEvent> _storyEvents;
+
     public void AdvanceAct()
     {
         _subIndexAct++;
@@ -25,8 +29,34 @@ public class NarrativeManager : MonoBehaviour
         _subIndexAct = 0;
     }
 
-    
-    
+    public void EventByName(string eventName, string info)
+    {
+        foreach (GlobalEvent globalEvent in _storyEvents)
+        {
+            if (globalEvent is StringEvent stringEvent && stringEvent.name == eventName)
+            {
+                stringEvent.Raise(info);
+                return;
+            }
+        }
+    }
+
+    private void Start()
+    {
+        foreach (GlobalEvent e in _storyEvents)
+        {
+            if (e is StringEvent s)
+            {
+                switch (s.name)
+                {
+                    case "ChangeSceneEvent":
+                        s.RegisterListener(info => GameManager.Instance.ChangeScene(info));
+                        break;
+                }
+            }
+        }
+    }
+
     void Awake()
     {
         if (Instance == null)

@@ -1197,11 +1197,11 @@ PrefabInstance:
     - target: {fileID: 3296283815221853208, guid: c6e2830d291f7d44b84438f2c00cd9ef, type: 3}
       propertyPath: '_act1TxtAssets.Array.data[0]'
       value: 
-      objectReference: {fileID: 4900000, guid: 5b3fb00d3c8331f4bad36a918a9ead3c, type: 3}
+      objectReference: {fileID: 4900000, guid: 46c01dbc788254946a190c2dd314125a, type: 3}
     - target: {fileID: 3296283815221853208, guid: c6e2830d291f7d44b84438f2c00cd9ef, type: 3}
       propertyPath: '_act1TxtAssets.Array.data[1]'
       value: 
-      objectReference: {fileID: 4900000, guid: 46c01dbc788254946a190c2dd314125a, type: 3}
+      objectReference: {fileID: 4900000, guid: 5b3fb00d3c8331f4bad36a918a9ead3c, type: 3}
     - target: {fileID: 3296283815221853208, guid: c6e2830d291f7d44b84438f2c00cd9ef, type: 3}
       propertyPath: _event.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1311,6 +1311,10 @@ PrefabInstance:
       propertyPath: '_scripts.Array.data[1]'
       value: 
       objectReference: {fileID: 236281816}
+    - target: {fileID: -1035317758714784077, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+      propertyPath: _storyEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 449370561044834560, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 341.20227
