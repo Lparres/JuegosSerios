@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GoalDetector : MonoBehaviour
 {
-    private StoryEvent storyEvent_;
+    private NarrativeManager _narrative;
 
     [SerializeField] private int score = 0;
     [SerializeField] private int goalsToWin = 3;
@@ -15,7 +15,7 @@ public class GoalDetector : MonoBehaviour
 
     void Start()
     {
-        storyEvent_ = gameObject.GetComponent<StoryEvent>();
+        _narrative = NarrativeManager.Instance;
         // Guardar las posiciones iniciales
         initialPlayerPosition = player_.transform.position;
         initialBallPosition = ball_.transform.position;
@@ -44,7 +44,7 @@ public class GoalDetector : MonoBehaviour
             if (score >= goalsToWin)
             {
                 //NarrativeManager.Instance.AdvanceAct();
-                GameManager.Instance.ChangeScene("Acto1");
+                _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
             }
         }
     }

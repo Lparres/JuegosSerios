@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "ChangeSceneEvent", menuName = "Event/StringEvent")]
+[CreateAssetMenu(fileName = "StringEvent", menuName = "Event/StringEvent")]
 public class StringEvent : GlobalEvent
 {
     private Action<string> _onEventRaised;

@@ -18,8 +18,9 @@ public class NarrativeManager : MonoBehaviour
 
     [SerializeField] private GlobalEventRegistry _eventRegistry;
 
-    public void AdvanceAct()
+    public void AdvanceAct(string a)
     {
+        Debug.Log("AdvanceAct");
         _subIndexAct++;
     }
     
@@ -33,10 +34,15 @@ public class NarrativeManager : MonoBehaviour
     {
         if (_eventRegistry != null)
         {
+            Debug.Log(eventName);
             GlobalEvent globalEvent = _eventRegistry.GetEventByName(eventName);
             if (globalEvent is StringEvent stringEvent)
             {
                 stringEvent.Raise(info);
+            }
+            else if (globalEvent is BoolEvent boolEvent)
+            {
+                boolEvent.Raise(true);
             }
         }
     }
@@ -47,6 +53,14 @@ public class NarrativeManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            if (_eventRegistry != null)
+            {
+                GlobalEvent globalEvent = _eventRegistry.GetEventByName("MinigameEnded");
+                if (globalEvent is StringEvent events)
+                {
+                    events.RegisterListener(AdvanceAct);
+                }
+            }
         }
         else
         {

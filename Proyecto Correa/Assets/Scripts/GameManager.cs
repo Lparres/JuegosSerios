@@ -17,17 +17,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
-    [SerializeField] private EntertainmentGame _entertainment;
-    [SerializeField] private WalkingGame _walk;
-    [SerializeField] private FoodGame _food;
+    private BoxCollider _entertainment;
 
     [SerializeField] private GlobalEventRegistry _eventRegistry;
     
     private float _time;
+
+    public void SetMinigames(BoxCollider go)
+    {
+        _entertainment = go;
+    }
     
     public void CanPlayMiniGame(bool can)
     {
-        _entertainment.SetState(can);
+        Debug.Log("CAN: " + can);
+        //_entertainment.enabled = can;
     }
 
     private void Awake()
@@ -43,24 +47,21 @@ public class GameManager : MonoBehaviour
                 {
                     stringEvent.RegisterListener(ChangeScene);
                 }
+                globalEvent = _eventRegistry.GetEventByName("MinigameEnded");
+                if (globalEvent is StringEvent events)
+                {
+                    events.RegisterListener(ChangeScene);
+                }
+                globalEvent = _eventRegistry.GetEventByName("ActivateMinigameEvent");
+                if (globalEvent is BoolEvent boolEvent)
+                {
+                    boolEvent.RegisterListener(CanPlayMiniGame);
+                }
             }
         }
         else
         {
             Destroy(gameObject);
-        }
-    }
-    
-    void OnDestroy()
-    {
-        // Quitar registros al destruir el objeto
-        if (_eventRegistry != null)
-        {
-            GlobalEvent changeSceneEvent = _eventRegistry.GetEventByName("ChangeSceneEvent");
-            if (changeSceneEvent is StringEvent stringEvent)
-            {
-                stringEvent.UnregisterListener(ChangeScene);
-            }
         }
     }
 
@@ -87,8 +88,10 @@ public class GameManager : MonoBehaviour
 
     public void DialogueEnded()
     {
-        Debug.Log(UI);
-        UI.OnDialogueEnd();
+        if (_ui != null)
+        {
+            _ui.OnDialogueEnd();
+        }
     }
 
     public void ChangeScene(string sceneName)
