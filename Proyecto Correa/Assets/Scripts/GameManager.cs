@@ -74,6 +74,10 @@ public class GameManager : MonoBehaviour
             UpdateEntertainment(-1);
         }
         else _time += Time.deltaTime;
+
+
+        // DEBUGGGG
+        DebugToAct1();
     }
 
     public void NextLine(string text)
@@ -108,6 +112,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // ESTO SE QUITARA
+    public void DebugToAct1()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ChangeScene("Acto1");
+        }
+    }
     #region MEDIDORES
     public void UpdateHunger(float amount)
     {
