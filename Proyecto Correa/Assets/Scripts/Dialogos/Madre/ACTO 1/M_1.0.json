@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^¡Mira! Ese regalo es para ti, adelante, intenta abrirlo.","\n","ev","str","^ChangeSceneEvent","/str","str","^MinijuegoRegalo","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^¡Mira! Ese regalo es para ti, adelante, intenta abrirlo.","\n","ev",{"x()":"StoryEvent"},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

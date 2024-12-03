@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Espero que te guste tu regalo","\n","^Podrías ir fuera a probarlo con tu hermanito","\n","ev","str","^ActivateMinigameEvent","/str",true,{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[[["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

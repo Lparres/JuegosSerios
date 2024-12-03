@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class BottleDrinking : MonoBehaviour
@@ -6,16 +5,9 @@ public class BottleDrinking : MonoBehaviour
     [SerializeField] private GameObject bottleContent;
     [SerializeField] private float drinkingSpeed = 0.05f;
     [SerializeField] private float scaleThreshold = 0.05f;
-    
-    private NarrativeManager _narrative;
 
     private float timer = 0f;
     private bool isDrinking = true;
-
-    private void Start()
-    {
-        _narrative = NarrativeManager.Instance;
-    }
 
     void Update()
     {
@@ -26,7 +18,7 @@ public class BottleDrinking : MonoBehaviour
                 Drink();
             }
 
-            // Comprobaciï¿½n Final
+            // Comprobación Final
             if (bottleContent.transform.localScale.y <= scaleThreshold)
             {
                 FinishDrinking();
@@ -41,7 +33,7 @@ public class BottleDrinking : MonoBehaviour
         newScale.y -= drinkingSpeed;
         bottleContent.transform.localScale = newScale;
 
-        // Opcional: Ajusta la posiciï¿½n
+        // Opcional: Ajusta la posición
         Vector3 newPosition = bottleContent.transform.position;
         newPosition.y -= drinkingSpeed / 2;
         bottleContent.transform.position = newPosition;
@@ -53,6 +45,6 @@ public class BottleDrinking : MonoBehaviour
     {
         isDrinking = false;
         Debug.Log(timer + " segs");
-        _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
+        GameManager.Instance.ChangeScene("Acto1");
     }
 }

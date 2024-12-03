@@ -16,6 +16,8 @@ public class Guion : MonoBehaviour
     private List<List<TextAsset>> _textAssets;
     
     private List<List<Story>> _inkStories;
+    
+    [SerializeField] private List<UnityEvent> _event;
 
     public void NextLine()
     {
@@ -24,7 +26,6 @@ public class Guion : MonoBehaviour
         
         if (activeStory.canContinue)
         {
-            Debug.Log("LINEA");
             GameManager.Instance.NextLine(activeStory.Continue());
         }
         else
@@ -42,9 +43,11 @@ public class Guion : MonoBehaviour
             foreach (TextAsset asset in act)
             {
                 Story s = new Story(asset.text);
-                s.BindExternalFunction("StoryEvent", (string eventName, string info) =>
+                s.BindExternalFunction("StoryEvent", () =>
                 {
-                    NarrativeManager.Instance.EventByName(eventName, info);
+                    Debug.Log("CALLBACK");
+                    _event[0].Invoke();
+                    _event[0].AddListener(() => {});
                 });
                 
                 actStories.Add(s);

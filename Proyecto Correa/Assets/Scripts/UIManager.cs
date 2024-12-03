@@ -10,17 +10,15 @@ public class UIManager : MonoBehaviour
     public GameObject intro3;
     public GameObject intro4;
 
-    [SerializeField] private GameObject _dialogue;
-    [SerializeField] private TMP_Text _message;
+    private GameObject _dialogue;
+    private TMP_Text _message;
     private string _sentence;
     public bool Typing { get; private set; }
 
     public void ChangeDialogue(string text)
     {
-        Debug.Log(text);
         if (!Typing && text.Length != 0) 
         {
-            Debug.Log("UI LINEA");
             _dialogue.SetActive(true);
             _sentence = text;
             StopAllCoroutines();
@@ -54,7 +52,7 @@ public class UIManager : MonoBehaviour
             Typing = false;
         }
     }
-    
+
     public void DissapearObject(GameObject myObj)
     {
         myObj.SetActive(false);
@@ -63,6 +61,13 @@ public class UIManager : MonoBehaviour
     public void AppearObject(GameObject myObj)
     {
         myObj.SetActive(true);
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        _dialogue = transform.GetChild(3).gameObject;
+        _message = _dialogue.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame

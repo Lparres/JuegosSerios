@@ -29,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Acto2.unity
     guid: 17adba840a31d5e43a3b34eaa168bbff
-  - enabled: 1
-    path: "Assets/Scenes/Biber\xF3n.unity"
-    guid: cd7e291c1ff62b04fb9566ea74edc51c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 60cb1e8c03b778743ab40465c2bda895, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
