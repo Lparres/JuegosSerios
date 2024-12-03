@@ -53,6 +53,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc87a08ddd5a3be4aab182304418418d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro1: {fileID: 0}
+  intro2: {fileID: 0}
+  intro3: {fileID: 0}
+  intro4: {fileID: 0}
+  _dialogue: {fileID: 0}
+  _message: {fileID: 0}
 --- !u!1 &733631195915531100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,12 +2724,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e3d0c7a8dfa3d41b0387460d10a7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hungerBarImage: {fileID: 5022926592053013090}
-  entertainmentBarImage: {fileID: 3966604558210787640}
-  walkBarImage: {fileID: 8599799063255411569}
-  maxHunger: 100
-  maxEntertainment: 100
-  maxWalk: 100
+  _hungerBarImage: {fileID: 5022926592053013090}
+  _entertainmentBarImage: {fileID: 3966604558210787640}
+  _walkBarImage: {fileID: 8599799063255411569}
+  _maxHunger: 100
+  _maxEntertainment: 100
+  _maxWalk: 100
 --- !u!1 &7348223185188153223
 GameObject:
   m_ObjectHideFlags: 0

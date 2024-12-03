@@ -1,73 +1,81 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ProgressBarController : MonoBehaviour
 {
     // Referencias a las imágenes de las tres barras
-    public Image hungerBarImage;
-    public Image entertainmentBarImage;
-    public Image walkBarImage;
+    [SerializeField] private Image _hungerBarImage;
+    [SerializeField] private Image _entertainmentBarImage;
+    [SerializeField] private Image _walkBarImage;
 
     // Máximos valores para cada medidor
-    public float maxHunger = 100f;
-    public float maxEntertainment = 100f;
-    public float maxWalk = 100f;
+    [SerializeField] private float _maxHunger = 100f;
+    [SerializeField] private float _maxEntertainment = 100f;
+    [SerializeField] private float _maxWalk = 100f;
 
     // Valores actuales de cada medidor
-    private float currentHunger;
-    private float currentEntertainment;
-    private float currentWalk;
+    private float _currentHunger;
+    private float _currentEntertainment;
+    private float _currentWalk;
 
     void Start()
     {
         // Inicializa cada medidor al máximo valor
-        currentHunger = maxHunger;
-        currentEntertainment = maxEntertainment;
-        currentWalk = maxWalk;
+        _currentHunger = _maxHunger;
+        _currentEntertainment = _maxEntertainment;
+        _currentWalk = _maxWalk;
 
         UpdateAllBars();
     }
 
     public void UpdateHunger(float amount)
     {
-        currentHunger = Mathf.Clamp(currentHunger + amount, 0, maxHunger);
+        _currentHunger = Mathf.Clamp(_currentHunger + amount, 0, _maxHunger);
         UpdateHungerBar();
     }
 
     public void UpdateEntertainment(float amount)
     {
-        currentEntertainment = Mathf.Clamp(currentEntertainment + amount, 0, maxEntertainment);
+        _currentEntertainment = Mathf.Clamp(_currentEntertainment + amount, 0, _maxEntertainment);
         UpdateEntertainmentBar();
     }
 
     public void UpdateWalk(float amount)
     {
-        currentWalk = Mathf.Clamp(currentWalk + amount, 0, maxWalk);
+        _currentWalk = Mathf.Clamp(_currentWalk + amount, 0, _maxWalk);
         UpdateWalkBar();
     }
 
     // Métodos para actualizar cada barra individualmente
-    void UpdateHungerBar()
+    private void UpdateHungerBar()
     {
-        hungerBarImage.fillAmount = currentHunger / maxHunger;
+        _hungerBarImage.fillAmount = _currentHunger / _maxHunger;
     }
 
-    void UpdateEntertainmentBar()
+    private void UpdateEntertainmentBar()
     {
-        entertainmentBarImage.fillAmount = currentEntertainment / maxEntertainment;
+        _entertainmentBarImage.fillAmount = _currentEntertainment / _maxEntertainment;
     }
 
-    void UpdateWalkBar()
+    private void UpdateWalkBar()
     {
-        walkBarImage.fillAmount = currentWalk / maxWalk;
+        _walkBarImage.fillAmount = _currentWalk / _maxWalk;
     }
 
     // Método opcional para actualizar todas las barras al iniciar el juego
-    void UpdateAllBars()
+    private void UpdateAllBars()
     {
         UpdateHungerBar();
         UpdateEntertainmentBar();
         UpdateWalkBar();
+    }
+
+    public void ResetAllBars()
+    {
+        _currentHunger = _maxHunger;
+        
+        UpdateAllBars();
     }
 }
 

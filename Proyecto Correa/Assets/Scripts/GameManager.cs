@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
     public UIManager UI { get { return _ui; } }
     
     [SerializeField] private ProgressBarController _progressBarController;
-    [SerializeField] private SceneTransitionManager _sceneTransitionManager;
-    [SerializeField] private NarrativeManager _narrativeManager;
+    private SceneTransitionManager _sceneTransitionManager;
+    private NarrativeManager _narrativeManager;
 
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
-    private BoxCollider _entertainment;
+    [SerializeField] private BoxCollider _entertainment;
 
     [SerializeField] private GlobalEventRegistry _eventRegistry;
     
@@ -28,10 +28,10 @@ public class GameManager : MonoBehaviour
         _entertainment = go;
     }
     
-    public void CanPlayMiniGame(bool can)
+    private void CanPlayMiniGame(bool can)
     {
-        Debug.Log("CAN: " + can);
-        //_entertainment.enabled = can;
+        Debug.Log("CAN MINIGAME: " + can);
+        _entertainment.enabled = can;
     }
 
     private void Awake()
@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            _narrativeManager = GetComponent<NarrativeManager>();
+            _sceneTransitionManager = GetComponent<SceneTransitionManager>();
+            
             if (_eventRegistry != null)
             {
                 GlobalEvent globalEvent = _eventRegistry.GetEventByName("ChangeSceneEvent");
@@ -67,16 +71,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (_time == NarrativeManager.Instance.MeterThreshold)
-        {
-            _time = 0;
-            UpdateHunger(-1);
-            UpdateWalk(-1);
-            UpdateEntertainment(-1);
-        }
-        else _time += Time.deltaTime;
-
-
+        UpdateHunger(-_narrativeManager.Speed * Time.deltaTime);
+        UpdateWalk(-_narrativeManager.Speed * Time.deltaTime);
+        UpdateEntertainment(-_narrativeManager.Speed * Time.deltaTime);
+        
         // DEBUGGGG
         DebugToAct1();
     }
@@ -98,6 +96,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(sceneName + " [Cambio Escena]");
         DialogueEnded();
+        _progressBarController.ResetAllBars();
         _sceneTransitionManager.ChangeScene(sceneName);
     }
 
@@ -116,7 +115,7 @@ public class GameManager : MonoBehaviour
     }
 
     // ESTO SE QUITARA
-    public void DebugToAct1()
+    private void DebugToAct1()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -124,17 +123,17 @@ public class GameManager : MonoBehaviour
         }
     }
     #region MEDIDORES
-    public void UpdateHunger(float amount)
+    private void UpdateHunger(float amount)
     {
         _progressBarController.UpdateHunger(amount);
     }
 
-    public void UpdateEntertainment(float amount)
+    private void UpdateEntertainment(float amount)
     {
         _progressBarController.UpdateEntertainment(amount);
     }
 
-    public void UpdateWalk(float amount)
+    private void UpdateWalk(float amount)
     {
         _progressBarController.UpdateWalk(amount);
     }

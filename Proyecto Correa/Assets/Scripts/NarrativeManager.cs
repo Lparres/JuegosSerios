@@ -14,11 +14,18 @@ public class NarrativeManager : MonoBehaviour
     
     public Vector2 StoryPoint { get { return new Vector2(_currentAct, _subIndexAct); } }
 
-    public float MeterThreshold { get; private set; } = 10;
+    private float[] _meterSpeed;
+    public float Speed
+    {
+        get
+        {
+            return _meterSpeed[_currentAct - 1];
+        }
+    }
 
     [SerializeField] private GlobalEventRegistry _eventRegistry;
 
-    public void AdvanceAct(string a)
+    private void AdvanceAct(string a)
     {
         Debug.Log("AdvanceAct");
         _subIndexAct++;
@@ -47,12 +54,30 @@ public class NarrativeManager : MonoBehaviour
         }
     }
 
-    void Awake()
+    private void SetMeterReduceSpeed()
+    {
+        _meterSpeed = new float[5];
+        
+        _meterSpeed[0] = 0.1f;
+        _meterSpeed[1] = 0.2f;
+        _meterSpeed[2] = 0.5f;
+        _meterSpeed[3] = 1f;
+        _meterSpeed[4] = 2f;
+    }
+
+    private void Start()
+    {
+        Debug.Log("NARRATIVE START");
+        SetMeterReduceSpeed();
+    }
+
+    private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            
             if (_eventRegistry != null)
             {
                 GlobalEvent globalEvent = _eventRegistry.GetEventByName("MinigameEnded");
