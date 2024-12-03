@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
 {
     // Singleton del GameManager
     public static GameManager Instance { get; private set; }
-    [SerializeField] private UIManager _ui;
-    public UIManager UI { get { return _ui; } }
+    public UIManager UI { get; private set; } 
     
     [SerializeField] private ProgressBarController _progressBarController;
     private SceneTransitionManager _sceneTransitionManager;
@@ -19,14 +18,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private BoxCollider _entertainment;
 
-    [SerializeField] private GlobalEventRegistry _eventRegistry;
-    
     private float _time;
-
-    public void SetMinigames(BoxCollider go)
-    {
-        _entertainment = go;
-    }
     
     private void CanPlayMiniGame(bool can)
     {
@@ -39,6 +31,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            UI = transform.GetChild(0).GetChild(0).gameObject.GetComponent<UIManager>();
             DontDestroyOnLoad(gameObject);
 
             _narrativeManager = GetComponent<NarrativeManager>();
@@ -86,10 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void DialogueEnded()
     {
-        if (_ui != null)
-        {
-            _ui.OnDialogueEnd();
-        }
+        UI.OnDialogueEnd();
     }
 
     public void ChangeScene(string sceneName)
