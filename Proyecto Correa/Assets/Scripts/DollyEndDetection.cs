@@ -16,7 +16,7 @@ public class DollyEndDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (myCinemachineSplineDolly.CameraPosition >= 2.0 && !actAdvanced)
+        if (myCinemachineSplineDolly.CameraPosition >= 1.0 && !actAdvanced)
         {
             actAdvanced = true;   
             changeScene();
