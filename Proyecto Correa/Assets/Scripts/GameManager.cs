@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // Singleton del GameManager
     public static GameManager Instance { get; private set; }
-    public UIManager UI { get; private set; } 
+    [SerializeField] private UIManager _ui;
+    public UIManager UI { get { return _ui; } }
     
     [SerializeField] private ProgressBarController _progressBarController;
     [SerializeField] private SceneTransitionManager _sceneTransitionManager;
@@ -16,15 +17,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
-    [SerializeField] private EntertainmentGame _entertainment;
-    [SerializeField] private WalkingGame _walk;
-    [SerializeField] private FoodGame _food;
+    private BoxCollider _entertainment;
 
+    [SerializeField] private GlobalEventRegistry _eventRegistry;
+    
     private float _time;
+
+    public void SetMinigames(BoxCollider go)
+    {
+        _entertainment = go;
+    }
     
     public void CanPlayMiniGame(bool can)
     {
-        _entertainment.SetState(can);
+        Debug.Log("CAN: " + can);
+        //_entertainment.enabled = can;
     }
 
     private void Awake()
@@ -32,8 +39,25 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            UI = transform.GetChild(0).GetChild(0).gameObject.GetComponent<UIManager>();
             DontDestroyOnLoad(gameObject);
+            if (_eventRegistry != null)
+            {
+                GlobalEvent globalEvent = _eventRegistry.GetEventByName("ChangeSceneEvent");
+                if (globalEvent is StringEvent stringEvent)
+                {
+                    stringEvent.RegisterListener(ChangeScene);
+                }
+                globalEvent = _eventRegistry.GetEventByName("MinigameEnded");
+                if (globalEvent is StringEvent events)
+                {
+                    events.RegisterListener(ChangeScene);
+                }
+                globalEvent = _eventRegistry.GetEventByName("ActivateMinigameEvent");
+                if (globalEvent is BoolEvent boolEvent)
+                {
+                    boolEvent.RegisterListener(CanPlayMiniGame);
+                }
+            }
         }
         else
         {
@@ -51,6 +75,10 @@ public class GameManager : MonoBehaviour
             UpdateEntertainment(-1);
         }
         else _time += Time.deltaTime;
+
+
+        // DEBUGGGG
+        DebugToAct1();
     }
 
     public void NextLine(string text)
@@ -60,12 +88,16 @@ public class GameManager : MonoBehaviour
 
     public void DialogueEnded()
     {
-        UI.OnDialogueEnd();
+        if (_ui != null)
+        {
+            _ui.OnDialogueEnd();
+        }
     }
 
     public void ChangeScene(string sceneName)
     {
         Debug.Log(sceneName + " [Cambio Escena]");
+        DialogueEnded();
         _sceneTransitionManager.ChangeScene(sceneName);
     }
 
@@ -83,6 +115,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // ESTO SE QUITARA
+    public void DebugToAct1()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ChangeScene("Acto1");
+        }
+    }
     #region MEDIDORES
     public void UpdateHunger(float amount)
     {

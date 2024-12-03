@@ -264,6 +264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1035317758714784077, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+      propertyPath: '_storyEvents.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c8900b4d5a4b0f34fa96876f3c39972c, type: 2}
     - target: {fileID: 449370561044834560, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 341.20227

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PresentMinigame : MonoBehaviour
 {
+    [SerializeField] private MouseActivator _mouseActivator;
+
+    private NarrativeManager _narrative;
     private Rigidbody[] _layers;
     private Drag3D _drag;
     private StoryEvent _event;
@@ -13,6 +16,8 @@ public class PresentMinigame : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _narrative = NarrativeManager.Instance;
+        _mouseActivator.ChangeMouseState();
         _drag = GetComponent<Drag3D>();
         _event = GetComponent<StoryEvent>();
         
@@ -37,10 +42,10 @@ public class PresentMinigame : MonoBehaviour
 
             if (_level == 30 && !_levelCompleted)
             {
+                _mouseActivator.ChangeMouseState();
                 Debug.Log("LevelState" + _levelCompleted);
                 _levelCompleted = true;
-                NarrativeManager.Instance.AdvanceAct();
-                GameManager.Instance.ChangeScene("Acto1");
+                _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
             }
         }
     }

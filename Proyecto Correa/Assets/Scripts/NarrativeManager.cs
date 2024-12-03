@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Ink.Parsed;
 using UnityEngine;
 
 public class NarrativeManager : MonoBehaviour
@@ -14,8 +16,11 @@ public class NarrativeManager : MonoBehaviour
 
     public float MeterThreshold { get; private set; } = 10;
 
-    public void AdvanceAct()
+    [SerializeField] private GlobalEventRegistry _eventRegistry;
+
+    public void AdvanceAct(string a)
     {
+        Debug.Log("AdvanceAct");
         _subIndexAct++;
     }
     
@@ -25,14 +30,37 @@ public class NarrativeManager : MonoBehaviour
         _subIndexAct = 0;
     }
 
-    
-    
+    public void EventByName(string eventName, string info)
+    {
+        if (_eventRegistry != null)
+        {
+            Debug.Log(eventName);
+            GlobalEvent globalEvent = _eventRegistry.GetEventByName(eventName);
+            if (globalEvent is StringEvent stringEvent)
+            {
+                stringEvent.Raise(info);
+            }
+            else if (globalEvent is BoolEvent boolEvent)
+            {
+                boolEvent.Raise(true);
+            }
+        }
+    }
+
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            if (_eventRegistry != null)
+            {
+                GlobalEvent globalEvent = _eventRegistry.GetEventByName("MinigameEnded");
+                if (globalEvent is StringEvent events)
+                {
+                    events.RegisterListener(AdvanceAct);
+                }
+            }
         }
         else
         {

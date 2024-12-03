@@ -16,6 +16,6 @@ public class FoodGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.ChangeScene("MinijuegoComida");
+        GameManager.Instance.ChangeScene("Biberón");
     }
 }
