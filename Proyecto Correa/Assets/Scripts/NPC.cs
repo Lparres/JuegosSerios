@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
+    private Animator animator;
     private NavMeshAgent agent;
     public float wanderRadius = 10f; // Radio de movimiento
     public float pauseTime = 3f;     // Tiempo que el NPC espera antes de moverse
@@ -13,12 +14,18 @@ public class NPC : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        if (isMovable) MoveToRandomPosition(); // Inicia el movimiento si está habilitado
+        animator = GetComponent<Animator>();
+
+        if (isMovable) MoveToRandomPosition();
     }
 
     void Update()
     {
-        if (!isMovable) return; // Si el movimiento está deshabilitado, no hace nada
+        if (!isMovable)
+        {
+            UpdateAnimation(false); // Cambiar a idle si el movimiento está deshabilitado
+            return;
+        }
 
         // Comprobar si el NPC ha llegado al destino
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && !isWaiting)
@@ -32,9 +39,12 @@ public class NPC : MonoBehaviour
         // Si el agente no puede llegar a su destino, recalcula
         if (agent.pathStatus == NavMeshPathStatus.PathInvalid && !isWaiting)
         {
-            Debug.LogWarning("Destino inalcanzable. Recalculando...");
+            Debug.LogWarning("Destino inalcanzable");
             MoveToRandomPosition();
         }
+
+        // Actualizar animación según el movimiento del agente
+        UpdateAnimation(agent.velocity.sqrMagnitude > 0f);
     }
 
     /// <summary>
@@ -71,6 +81,7 @@ public class NPC : MonoBehaviour
     private System.Collections.IEnumerator PauseBeforeNextMove()
     {
         isWaiting = true; // Marca al NPC como esperando
+        UpdateAnimation(false); // Cambiar a idle mientras espera
         yield return new WaitForSeconds(pauseTime); // Espera el tiempo definido
         isWaiting = false; // Reinicia el estado de espera
         MoveToRandomPosition(); // Mueve al NPC a un nuevo destino
@@ -83,6 +94,7 @@ public class NPC : MonoBehaviour
     {
         isMovable = false;
         agent.isStopped = true; // Detiene al NavMeshAgent
+        UpdateAnimation(false); // Cambiar a idle
     }
 
     /// <summary>
@@ -93,5 +105,17 @@ public class NPC : MonoBehaviour
         isMovable = true;
         agent.isStopped = false; // Reactiva al NavMeshAgent
         MoveToRandomPosition(); // Reinicia el movimiento
+    }
+
+    /// <summary>
+    /// Actualiza el parámetro "isWalking" en el Animator.
+    /// </summary>
+    /// <param name="isWalking">True si el NPC está caminando, False si está en idle.</param>
+    private void UpdateAnimation(bool isWalking)
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isWalking", isWalking);
+        }
     }
 }
