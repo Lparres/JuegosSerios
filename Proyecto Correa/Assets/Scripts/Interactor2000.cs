@@ -33,6 +33,11 @@ public class Interactor2000 : MonoBehaviour
                 {
                     dc.ToggleDoor();
                 }
+                // --- PUERTA CORREDERA ---
+                else if (hitObject.TryGetComponent<SlidingDoor>(out SlidingDoor sd))
+                {
+                    sd.ToggleDoor();
+                }
             }
 
             // --- MINIJUEGO COMIDA ---

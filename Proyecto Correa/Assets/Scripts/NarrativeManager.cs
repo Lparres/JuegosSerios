@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Ink.Parsed;
 using UnityEngine;
 
 public class NarrativeManager : MonoBehaviour
@@ -25,6 +27,7 @@ public class NarrativeManager : MonoBehaviour
 
     private void AdvanceAct(string a)
     {
+        Debug.Log("AdvanceAct");
         _subIndexAct++;
     }
     
