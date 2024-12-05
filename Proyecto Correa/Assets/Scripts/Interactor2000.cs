@@ -24,6 +24,11 @@ public class Interactor2000 : MonoBehaviour
             if (distanceToObject <= _maxInteractionDistance)  // && !hitObject.CompareTag("EntradaSitios"
             {
                 // --- GUION ---
+                if (hitObject.TryGetComponent<NPC>(out NPC n))
+                {
+                    n.StopMovement();
+                }
+                // --- GUION ---
                 if (hitObject.TryGetComponent<Guion>(out Guion g))
                 {
                     g.NextLine();

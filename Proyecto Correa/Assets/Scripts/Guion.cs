@@ -30,6 +30,7 @@ public class Guion : MonoBehaviour
         else
         {
             activeStory.ResetState();
+            gameObject.GetComponent<NPC>().ResumeMovement();
             GameManager.Instance.DialogueEnded();
         }
     }
