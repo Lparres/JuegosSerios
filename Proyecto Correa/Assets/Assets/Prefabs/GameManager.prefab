@@ -49,12 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ui: {fileID: 1175983899386312114}
   _progressBarController: {fileID: 1343212845825670904}
-  _sceneTransitionManager: {fileID: 5867996211562933298}
-  _narrativeManager: {fileID: -1035317758714784077}
-  _player: {fileID: 5731994982980497896, guid: d9d475a2872c80d458a474f89395ad45, type: 3}
-  _entertainment: {fileID: 6063991167500428267, guid: 1cb4d783e21bab24497d2d9ffdd7a579, type: 3}
-  _walk: {fileID: 0}
-  _food: {fileID: 0}
+  _player: {fileID: 4277155155853107130, guid: 4634b00d660b6d348a4be1cbe15bc21b, type: 3}
+  _entertainment: {fileID: 0}
   _eventRegistry: {fileID: 11400000, guid: cbec4ab931b23bd468ae5f780d4d0aa2, type: 2}
 --- !u!114 &5867996211562933298
 MonoBehaviour:

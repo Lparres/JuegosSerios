@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
         if (_ui != null)
         {
             _ui.OnDialogueEnd();
+            _player.GetComponent<FirstPersonController>().enabled = true;
         }
     }
 

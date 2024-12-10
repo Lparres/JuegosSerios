@@ -31,6 +31,7 @@ public class Interactor2000 : MonoBehaviour
                 // --- GUION ---
                 if (hitObject.TryGetComponent<Guion>(out Guion g))
                 {
+                    GameManager.Instance.GetPlayer().GetComponent<FirstPersonController>().enabled = false;
                     g.NextLine();
                 }
                 // --- PUERTA ---
