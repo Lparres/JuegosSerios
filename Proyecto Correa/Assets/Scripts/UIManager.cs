@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject intro3;
     public GameObject intro4;
 
+    public GameObject _furbo;
     [SerializeField] private GameObject _dialogue;
     [SerializeField] private TMP_Text _message;
     private string _sentence;

@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections; // Necesario para usar corrutinas
+using TMPro;
 
 public class GoalDetector : MonoBehaviour
 {
@@ -27,25 +29,33 @@ public class GoalDetector : MonoBehaviour
         {
             score++;
             Debug.Log("Puntuacion: " + score);
-
-            // Resetear posiciones
-            player_.transform.position = initialPlayerPosition;
-            ball_.transform.position = initialBallPosition;
-
-            // Resetear velocidades
-            Rigidbody ballRb = ball_.GetComponent<Rigidbody>();
-            ballRb.linearVelocity = Vector3.zero;
-            ballRb.angularVelocity = Vector3.zero;
-
-            Rigidbody playerRb = player_.GetComponent<Rigidbody>();
-            playerRb.linearVelocity = Vector3.zero;
-            playerRb.angularVelocity = Vector3.zero;
+            GameManager.Instance.UI._furbo.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = score.ToString() + "/3";
+            // Iniciar la corrutina para pausar antes de resetear
+            StartCoroutine(ResetAfterDelay());
 
             if (score >= goalsToWin)
             {
-                //NarrativeManager.Instance.AdvanceAct();
                 _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
             }
         }
+    }
+
+    private IEnumerator ResetAfterDelay()
+    {
+        // Esperar 1 segundo
+        yield return new WaitForSeconds(1f);
+
+        // Resetear posiciones
+        player_.transform.position = initialPlayerPosition;
+        ball_.transform.position = initialBallPosition;
+
+        // Resetear velocidades
+        Rigidbody ballRb = ball_.GetComponent<Rigidbody>();
+        ballRb.linearVelocity = Vector3.zero;
+        ballRb.angularVelocity = Vector3.zero;
+
+        Rigidbody playerRb = player_.GetComponent<Rigidbody>();
+        playerRb.linearVelocity = Vector3.zero;
+        playerRb.angularVelocity = Vector3.zero;
     }
 }
