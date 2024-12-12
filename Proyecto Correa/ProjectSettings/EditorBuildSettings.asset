@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MinijuegoEntretenimiento.unity
     guid: 8f8e88bd19afa794c80d06aa3db49993
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MinijuegoPaseo.unity
     guid: 661dceca4edd9974993cbc20fc3869b8
   - enabled: 1
@@ -28,7 +28,7 @@ EditorBuildSettings:
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/Acto2.unity
-    guid: 17adba840a31d5e43a3b34eaa168bbff
+    guid: baf76f5607c76794982df181cb84d4ad
   - enabled: 1
     path: "Assets/Scenes/Biber\xF3n.unity"
     guid: cd7e291c1ff62b04fb9566ea74edc51c

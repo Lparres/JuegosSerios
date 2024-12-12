@@ -202,6 +202,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxInteractionDistance: 3
   _player: {fileID: 1637483153}
+  _layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &67586500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2218,12 +2221,12 @@ MonoBehaviour:
   zoomFOV: 30
   zoomStepTime: 5
   playerCanMove: 1
-  walkSpeed: 1
+  walkSpeed: 1.75
   maxVelocityChange: 10
   enableSprint: 1
   unlimitedSprint: 1
   sprintKey: 304
-  sprintSpeed: 2
+  sprintSpeed: 2.5
   sprintDuration: 5
   sprintCooldown: 0.5
   sprintFOV: 120
