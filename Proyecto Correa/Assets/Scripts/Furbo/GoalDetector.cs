@@ -37,6 +37,7 @@ public class GoalDetector : MonoBehaviour
 
             if (score >= goalsToWin)
             {
+                GameManager.Instance.UpdateEntertainment(10);
                 _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
                 GameManager.Instance.UI._furbo.SetActive(false);
             }

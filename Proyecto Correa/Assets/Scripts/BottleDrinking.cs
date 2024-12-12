@@ -53,6 +53,7 @@ public class BottleDrinking : MonoBehaviour
     {
         isDrinking = false;
         Debug.Log(timer + " segs");
+        GameManager.Instance.UpdateHunger(10);
         _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
     }
 }

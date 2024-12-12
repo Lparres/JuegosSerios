@@ -13,6 +13,9 @@ public class Escaleras : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.ChangeScene("Acto2");
+        if(other.gameObject.GetComponent<FirstPersonController>() != null)
+        {
+            GameManager.Instance.ChangeScene("Acto2");
+        }
     }
 }

@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GlobalEventRegistry _eventRegistry;
     
     private float _time;
+    
+    public bool OnDialogue { get;  set; }
 
     public void SetPlayer(GameObject p)
     {
@@ -59,10 +61,10 @@ public class GameManager : MonoBehaviour
                _entertainment.enabled = true;
                break;
            case "Food":
-               _entertainment.enabled = true;
+               _food.enabled = true;
                break;
            case "Walk":
-               _entertainment.enabled = true;
+               _walking.enabled = true;
                break;
            case "Stairs":
                _stairs.enabled = true;
@@ -130,6 +132,7 @@ public class GameManager : MonoBehaviour
         {
             _ui.OnDialogueEnd();
             _player.GetComponent<FirstPersonController>().enabled = true;
+            OnDialogue = false;
         }
     }
 
@@ -168,12 +171,12 @@ public class GameManager : MonoBehaviour
         }
     }
     #region MEDIDORES
-    private void UpdateHunger(float amount)
+    public void UpdateHunger(float amount)
     {
         _progressBarController.UpdateHunger(amount);
     }
 
-    private void UpdateEntertainment(float amount)
+    public void UpdateEntertainment(float amount)
     {
         _progressBarController.UpdateEntertainment(amount);
     }
