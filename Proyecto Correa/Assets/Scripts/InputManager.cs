@@ -27,6 +27,7 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.SetPlayer(gameObject);
         _ui = GameManager.Instance.UI;
         if (Camera.main != null) _i2000 = Camera.main.GetComponent<Interactor2000>();
     }

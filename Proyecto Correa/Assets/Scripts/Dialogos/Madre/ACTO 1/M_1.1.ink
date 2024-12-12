@@ -1,5 +1,4 @@
 ﻿EXTERNAL StoryEvent(eventName, set)
-
-Espero que te guste tu regalo
-Podrías ir fuera a probarlo con tu hermanito
-~StoryEvent("ActivateMinigameEvent", true)
+Aún eres un poco pequeño deja que te ayude
+¿Qué? ¿Te gusta? ¿Por qué no vas a probarla al jardín con Alex?
+~StoryEvent("ActivateMinigameEvent", "Entertainment")

@@ -17,7 +17,7 @@ public class EntertainmentGame : MonoBehaviour
     private void Start()
     {
         _col = GetComponent<BoxCollider>();
-        GameManager.Instance.SetMinigames(_col);
+        GameManager.Instance.SetEntertainment(_col);
     }
 
     private void OnTriggerEnter(Collider other)

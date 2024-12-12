@@ -27,8 +27,8 @@ public class NarrativeManager : MonoBehaviour
 
     private void AdvanceAct(string a)
     {
-        Debug.Log("AdvanceAct");
         _subIndexAct++;
+        Debug.Log("AdvanceAct " + _subIndexAct);
     }
     
     public void NextAct()
@@ -46,10 +46,6 @@ public class NarrativeManager : MonoBehaviour
             if (globalEvent is StringEvent stringEvent)
             {
                 stringEvent.Raise(info);
-            }
-            else if (globalEvent is BoolEvent boolEvent)
-            {
-                boolEvent.Raise(true);
             }
         }
     }

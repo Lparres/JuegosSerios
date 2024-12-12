@@ -1,2 +1,3 @@
-﻿Espero que te guste tu regalo
-Podrías ir fuera a probarlo con tu hermanito
+﻿EXTERNAL StoryEvent(eventName, info)
+Venga ven que te demos la cena
+~StoryEvent("ActivateMinigameEvent", "Food")

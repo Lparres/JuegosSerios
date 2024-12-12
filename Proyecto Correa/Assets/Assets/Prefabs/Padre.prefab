@@ -34,19 +34,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a644765f283896499295b0a5efa5170, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5613639
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a644765f283896499295b0a5efa5170, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a644765f283896499295b0a5efa5170, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8275691
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a644765f283896499295b0a5efa5170, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a644765f283896499295b0a5efa5170, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a644765f283896499295b0a5efa5170, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -111.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a644765f283896499295b0a5efa5170, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -114,9 +114,6 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 9573c85a01f1ab146b44c0d786e2b83b, type: 3}
   - {fileID: 4900000, guid: ed254bbfec0285c4ba5b5d2aaac6e96c, type: 3}
   - {fileID: 4900000, guid: 444046ba5e62f924ea4cdc27131d55a6, type: 3}
-  - {fileID: 4900000, guid: e0e7f59312a6013429730e658dd52465, type: 3}
-  - {fileID: 4900000, guid: ec616699760708846a03a6523905b010, type: 3}
-  - {fileID: 4900000, guid: e155833dff6c5644786c8a6d9c317bf2, type: 3}
   _act2TxtAssets: []
   _act3TxtAssets: []
   _act4TxtAssets: []
@@ -140,10 +137,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.7
+  m_Radius: 0.78404623
+  m_Height: 2.3807726
   m_Direction: 1
-  m_Center: {x: 0, y: 1.0011586, z: 0}
+  m_Center: {x: -0.0023476286, y: 0.99411625, z: 0}
 --- !u!54 &193171254955458183
 Rigidbody:
   m_ObjectHideFlags: 0

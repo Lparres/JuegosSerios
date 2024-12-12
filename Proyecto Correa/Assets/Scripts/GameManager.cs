@@ -14,24 +14,62 @@ public class GameManager : MonoBehaviour
     private SceneTransitionManager _sceneTransitionManager;
     private NarrativeManager _narrativeManager;
 
-    [SerializeField] private GameObject _player;
+    private GameObject _player;
     public GameObject GetPlayer() { return _player; }
 
-    [SerializeField] private BoxCollider _entertainment;
+    private BoxCollider _entertainment;
+    private BoxCollider _food;
+    private BoxCollider _walking;
+    private BoxCollider _stairs;
 
     [SerializeField] private GlobalEventRegistry _eventRegistry;
     
     private float _time;
 
-    public void SetMinigames(BoxCollider go)
+    public void SetPlayer(GameObject p)
+    {
+        _player = p;
+    }
+
+    public void SetStairs(BoxCollider go)
+    {
+        _stairs = go;
+    }
+    
+    public void SetEntertainment(BoxCollider go)
     {
         _entertainment = go;
     }
     
-    private void CanPlayMiniGame(bool can)
+    public void SetFoodGame(BoxCollider go)
     {
-        Debug.Log("CAN MINIGAME: " + can);
-        _entertainment.enabled = can;
+        _food = go;
+    }
+    
+    public void SetWalkGame(BoxCollider go)
+    {
+        _walking = go;
+    }
+    
+    private void CanPlayMiniGame(string game)
+    {
+        switch (game)
+        {
+           case "Entertainment":
+               _entertainment.enabled = true;
+               break;
+           case "Food":
+               _entertainment.enabled = true;
+               break;
+           case "Walk":
+               _entertainment.enabled = true;
+               break;
+           case "Stairs":
+               _stairs.enabled = true;
+               break;
+           default:
+                   break;
+        }
     }
 
     private void Awake()
@@ -57,7 +95,7 @@ public class GameManager : MonoBehaviour
                     events.RegisterListener(ChangeScene);
                 }
                 globalEvent = _eventRegistry.GetEventByName("ActivateMinigameEvent");
-                if (globalEvent is BoolEvent boolEvent)
+                if (globalEvent is StringEvent boolEvent)
                 {
                     boolEvent.RegisterListener(CanPlayMiniGame);
                 }
@@ -71,9 +109,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateHunger(-_narrativeManager.Speed * Time.deltaTime);
-        UpdateWalk(-_narrativeManager.Speed * Time.deltaTime);
-        UpdateEntertainment(-_narrativeManager.Speed * Time.deltaTime);
+        if(SceneManager.GetActiveScene().name == "Acto1"){
+            UpdateHunger(-_narrativeManager.Speed * Time.deltaTime);
+            UpdateWalk(-_narrativeManager.Speed * Time.deltaTime);
+            UpdateEntertainment(-_narrativeManager.Speed * Time.deltaTime);
+        }
         
         // DEBUGGGG
         DebugToAct1();
@@ -86,7 +126,7 @@ public class GameManager : MonoBehaviour
 
     public void DialogueEnded()
     {
-        if (_ui != null)
+        if (_ui != null && _player != null)
         {
             _ui.OnDialogueEnd();
             _player.GetComponent<FirstPersonController>().enabled = true;
@@ -97,7 +137,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(sceneName + " [Cambio Escena]");
         DialogueEnded();
-        _progressBarController.ResetAllBars();
+        //_progressBarController.ResetAllBars();
         _sceneTransitionManager.ChangeScene(sceneName);
     }
 

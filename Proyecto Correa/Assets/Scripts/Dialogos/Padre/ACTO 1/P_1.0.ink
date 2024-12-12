@@ -1,1 +1,1 @@
-﻿No tengas miedo, abre el regalo, que es para tí.
+﻿Estamos seguros de que te va a encantar tu regalo
