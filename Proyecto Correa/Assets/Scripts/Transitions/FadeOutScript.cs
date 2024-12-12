@@ -28,6 +28,8 @@ public class IntroSequence : MonoBehaviour
     IEnumerator IntroSequenceCoroutine()
     {
         backgroundImage.color = Color.black;
+        barsParent.SetActive(false);
+
         // 1. Esperar el tiempo inicial antes de mostrar el texto
         yield return new WaitForSeconds(initialDelay);
 
@@ -47,8 +49,8 @@ public class IntroSequence : MonoBehaviour
         yield return StartCoroutine(FadeImage(backgroundImage, 1f, 0f, backgroundFadeOutDuration));
 
         // 7. Activar medidores
-        //yield return new WaitForSeconds(3f);
-        //barsParent.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        barsParent.SetActive(true);
     }
 
     IEnumerator FadeText(TextMeshProUGUI text, float startAlpha, float endAlpha, float duration)
