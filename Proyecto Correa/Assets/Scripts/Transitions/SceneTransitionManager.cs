@@ -6,8 +6,8 @@ using System.Collections;
 public class SceneTransitionManager : MonoBehaviour
 {
     public Image fadeImage; // Imagen usada para el fade
-    private float fadeDuration = 2f; // Duración del fade
-    private float waitTimeBeforeFade = 2f; // Tiempo de espera antes del fade out
+    private float fadeDuration = 1.5f; // Duración del fade
+    private float waitTimeBeforeFade = 0.25f; // Tiempo de espera antes del fade out
 
     private bool isFading = false;
 

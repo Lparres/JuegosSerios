@@ -152,6 +152,10 @@ public class GameManager : MonoBehaviour
                 UI.intro1.SetActive(true);
                 UI.intro1.GetComponent<IntroSequence>().playIntro();
                 break;
+            case 2:
+                UI.intro2.SetActive(true);
+                UI.intro2.GetComponent<IntroSequence>().playIntro();
+                break;
         }
     }
 

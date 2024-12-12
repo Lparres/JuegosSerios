@@ -22,7 +22,7 @@ public class GoalDetector : MonoBehaviour
         initialPlayerPosition = player_.transform.position;
         initialBallPosition = ball_.transform.position;
 
-        GameManager.Instance.UI._furbo.active = true;
+        GameManager.Instance.UI._furbo.SetActive(true);
     }
 
     void OnTriggerEnter(Collider other)
@@ -38,7 +38,7 @@ public class GoalDetector : MonoBehaviour
             if (score >= goalsToWin)
             {
                 _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
-                wait();
+                GameManager.Instance.UI._furbo.SetActive(false);
             }
         }
     }
@@ -64,8 +64,7 @@ public class GoalDetector : MonoBehaviour
 
     private IEnumerator wait()
     {
-        yield return new WaitForSeconds(2f);
-        GameManager.Instance.UI._furbo.active = false;
+        yield return new WaitForSeconds(0.5f);
 
     }
 }

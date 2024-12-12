@@ -27,6 +27,7 @@ public class IntroSequence : MonoBehaviour
 
     IEnumerator IntroSequenceCoroutine()
     {
+        backgroundImage.color = Color.black;
         // 1. Esperar el tiempo inicial antes de mostrar el texto
         yield return new WaitForSeconds(initialDelay);
 
