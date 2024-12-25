@@ -34,19 +34,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.95462656
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.29780555
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 34.652
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02de29e2360dc2244ac82c8374cee40b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -230,7 +230,11 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 5b3fb00d3c8331f4bad36a918a9ead3c, type: 3}
   - {fileID: 4900000, guid: 73572090a5cc94f4fb9a1dd2681be9f4, type: 3}
   - {fileID: 4900000, guid: 897c69e38584b4b4fa9e9dc9108e720e, type: 3}
-  _act2TxtAssets: []
+  _act2TxtAssets:
+  - {fileID: 4900000, guid: 84c13a052dd4fb84e809b08501717a2f, type: 3}
+  - {fileID: 4900000, guid: 3ac025547b9b10847b757d958e16d64b, type: 3}
+  - {fileID: 4900000, guid: a6f690e3b1943474d89413df9f338f81, type: 3}
+  - {fileID: 4900000, guid: 9dbccf8a132fe1644a7ab29cfd78d079, type: 3}
   _act3TxtAssets: []
   _act4TxtAssets: []
   _act5TxtAssets: []
