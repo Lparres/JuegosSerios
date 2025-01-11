@@ -16,6 +16,7 @@ public class Escaleras : MonoBehaviour
         if(other.gameObject.GetComponent<FirstPersonController>() != null)
         {
             GameManager.Instance.ChangeScene("Acto2");
+            GameManager.Instance.GetNarrativeManager().NextAct();
         }
     }
 }

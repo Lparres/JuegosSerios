@@ -117,9 +117,8 @@ public class GameManager : MonoBehaviour
             UpdateWalk(-_narrativeManager.Speed * Time.deltaTime);
             UpdateEntertainment(-_narrativeManager.Speed * Time.deltaTime);
         }
-        
-        // DEBUGGGG
-        DebugToAct1();
+
+        DebugToActX();
     }
 
     public void NextLine(string text)
@@ -144,8 +143,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void IntroAct(int act)
-    {
-        
+    {        
         switch (act)
         {
             case 0:
@@ -170,12 +168,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ESTO SE QUITARA
-    private void DebugToAct1()
+    private void DebugToActX()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.F1))
         {
             ChangeScene("Acto1");
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            ChangeScene("Acto2");
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            ChangeScene("Acto3");
+        }
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            ChangeScene("Acto4");
         }
     }
     #region MEDIDORES

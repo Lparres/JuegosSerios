@@ -27,8 +27,6 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/MinijuegoRegalo.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/MinijuegoComida.unity
-  - m_enabled: 1
     m_path: Assets/Scenes/MinijuegoEntretenimiento.unity
   - m_enabled: 0
     m_path: Assets/Scenes/MinijuegoPaseo.unity

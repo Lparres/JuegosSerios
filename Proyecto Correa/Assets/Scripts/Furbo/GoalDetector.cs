@@ -45,11 +45,6 @@ public class GoalDetector : MonoBehaviour
             GameManager.Instance.UI._furbo.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = score.ToString() + " pts";
 
             StartCoroutine(ResetAfterDelay());
-
-            if (score >= goalsToWin)
-            {
-                EndMinigame();
-            }
         }
     }
 
