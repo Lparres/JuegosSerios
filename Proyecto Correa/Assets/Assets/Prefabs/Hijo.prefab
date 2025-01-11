@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b37b55409059c4b90eb219c83bd63b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b37b55409059c4b90eb219c83bd63b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b37b55409059c4b90eb219c83bd63b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b37b55409059c4b90eb219c83bd63b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _act1TxtAssets:
-  - {fileID: 4900000, guid: 8e792011f2fb6304c8878603744b2067, type: 3}
+  - {fileID: 4900000, guid: eb1100e4870163b469f4b7672eb0daff, type: 3}
   - {fileID: 4900000, guid: d21cdb54b3b97f647b9d55123cf3cb28, type: 3}
   - {fileID: 4900000, guid: f79d5a4fb3b3cbd4d96d4e0531684c33, type: 3}
   - {fileID: 4900000, guid: 3cb99b7525cf35843b0ac5eee91e9ffa, type: 3}

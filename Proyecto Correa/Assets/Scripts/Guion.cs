@@ -24,7 +24,6 @@ public class Guion : MonoBehaviour
         
         if (activeStory.canContinue)
         {
-            Debug.Log("LINEA");
             GameManager.Instance.NextLine(activeStory.Continue());
         }
         else

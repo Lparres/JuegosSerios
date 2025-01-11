@@ -13,22 +13,18 @@ public class Interactor2000 : MonoBehaviour
 
     public void Interact()
     {
-        // Crear un rayo desde la posición del ratón en pantalla
         if (Camera.main != null) _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        // Realizar el raycast
         if (!GameManager.Instance.OnDialogue && Physics.Raycast(_ray, out _hit, 200, _layer))
         {                    
-            Debug.Log("RAYCAST");
             _hitObject = _hit.collider.gameObject;
 
-            // Calcular la distancia al objeto impactado
+            // Calcular la distancia al objeto
             float distanceToObject = Vector3.Distance(_player.position, _hit.point);
 
             // Comprobar si está dentro del rango de interacción
-            if (distanceToObject <= _maxInteractionDistance)  // && !hitObject.CompareTag("EntradaSitios"
+            if (distanceToObject <= _maxInteractionDistance)
             {
-                Debug.Log("INTERACT DISTANCE: " + distanceToObject + " " + _hitObject);
                 // --- GUION ---
                 if (_hitObject.TryGetComponent<NPC>(out NPC n))
                 {
@@ -45,23 +41,14 @@ public class Interactor2000 : MonoBehaviour
                 // --- PUERTA ---
                 if (_hitObject.TryGetComponent<DoorController>(out DoorController dc))
                 {
-                    Debug.Log("DOOR");
                     dc.ToggleDoor();
                 }
                 // --- PUERTA CORREDERA ---
                 else if (_hitObject.TryGetComponent<SlidingDoor>(out SlidingDoor sd))
                 {
-                    Debug.Log("SLIDING DOOR");
                     sd.ToggleDoor();
                 }
             }
-            
-
-            // --- MINIJUEGO COMIDA ---
-            /*else if (_hit.collider.gameObject.GetComponent<FoodGame>() != null)
-            {
-                GameManager.Instance.ChangeScene("MinijuegoComida");
-            }*/
         }
         else if (GameManager.Instance.OnDialogue)
         {

@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections; // Necesario para usar corrutinas
+using System.Collections;
 using TMPro;
 
 public class GoalDetector : MonoBehaviour
@@ -15,31 +15,42 @@ public class GoalDetector : MonoBehaviour
     private Vector3 initialPlayerPosition;
     private Vector3 initialBallPosition;
 
+    [SerializeField] private float gameTime = 30f; // Duraci�n del minijuego en segundos
+    [SerializeField] private TextMeshProUGUI timerText; // Referencia al texto del temporizador en la UI
+
+    private bool isGameRunning = true;
+
     void Start()
     {
+        timerText = GameManager.Instance.UI._furbo.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>();
         _narrative = NarrativeManager.Instance;
+
         // Guardar las posiciones iniciales
         initialPlayerPosition = player_.transform.position;
         initialBallPosition = ball_.transform.position;
 
         GameManager.Instance.UI._furbo.SetActive(true);
+
+        // Iniciar la corrutina del temporizador
+        StartCoroutine(GameTimer());
     }
 
     void OnTriggerEnter(Collider other)
     {
+        if (!isGameRunning) return;
+
         if (other.CompareTag("Ball")) // Comprueba si el objeto es la pelota
         {
             score++;
-            Debug.Log("Puntuacion: " + score);
-            GameManager.Instance.UI._furbo.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = score.ToString() + "/3";
+            GameManager.Instance.UpdateEntertainment(4);
+            GameManager.Instance.UI._furbo.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = score.ToString() + " pts";
+
             // Iniciar la corrutina para pausar antes de resetear
             StartCoroutine(ResetAfterDelay());
 
             if (score >= goalsToWin)
             {
-                GameManager.Instance.UpdateEntertainment(10);
-                _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
-                GameManager.Instance.UI._furbo.SetActive(false);
+                EndMinigame();
             }
         }
     }
@@ -63,9 +74,30 @@ public class GoalDetector : MonoBehaviour
         playerRb.angularVelocity = Vector3.zero;
     }
 
-    private IEnumerator wait()
+    private IEnumerator GameTimer()
     {
-        yield return new WaitForSeconds(0.5f);
+        while (gameTime > 0)
+        {
+            if (!isGameRunning) yield break;
 
+            // Reducir el tiempo
+            gameTime -= Time.deltaTime;
+
+            // Actualizar la UI del temporizador
+            timerText.text = "Tiempo: " + Mathf.CeilToInt(gameTime).ToString();
+
+            yield return null; // Esperar al siguiente frame
+        }
+
+        EndMinigame();
+    }
+
+    private void EndMinigame()
+    {
+        isGameRunning = false;
+
+        _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
+
+        GameManager.Instance.UI._furbo.SetActive(false);
     }
 }

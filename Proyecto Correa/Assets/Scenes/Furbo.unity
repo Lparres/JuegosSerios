@@ -1852,6 +1852,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxInteractionDistance: 3
   _player: {fileID: 5731994981908864832}
+  _layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &5817137303443974893
 MonoBehaviour:
   m_ObjectHideFlags: 0
