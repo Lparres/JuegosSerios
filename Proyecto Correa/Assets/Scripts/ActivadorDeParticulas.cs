@@ -22,12 +22,6 @@ public class ActivadorDeParticulas : MonoBehaviour
     // M�todo para instanciar el sistema de part�culas
     private void InstanciarParticulas()
     {
-        if (prefabDeParticulas == null)
-        {
-            Debug.LogError("No se asign� un prefab de part�culas en el Inspector.");
-            return;
-        }
-
         // Instanciar el prefab con una rotaci�n orientada hacia arriba
         particulasInstanciadas = Instantiate(prefabDeParticulas, transform.position, Quaternion.identity);
 

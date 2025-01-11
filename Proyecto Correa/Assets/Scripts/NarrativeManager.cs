@@ -28,7 +28,6 @@ public class NarrativeManager : MonoBehaviour
     private void AdvanceAct(string a)
     {
         _subIndexAct++;
-        Debug.Log("AdvanceAct " + _subIndexAct);
     }
     
     public void NextAct()
@@ -41,7 +40,6 @@ public class NarrativeManager : MonoBehaviour
     {
         if (_eventRegistry != null)
         {
-            Debug.Log(eventName);
             GlobalEvent globalEvent = _eventRegistry.GetEventByName(eventName);
             if (globalEvent is StringEvent stringEvent)
             {
@@ -63,7 +61,6 @@ public class NarrativeManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("NARRATIVE START");
         SetMeterReduceSpeed();
     }
 

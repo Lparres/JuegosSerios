@@ -15,23 +15,22 @@ public class GoalDetector : MonoBehaviour
     private Vector3 initialPlayerPosition;
     private Vector3 initialBallPosition;
 
-    [SerializeField] private float gameTime = 30f; // Duraci�n del minijuego en segundos
-    [SerializeField] private TextMeshProUGUI timerText; // Referencia al texto del temporizador en la UI
+    [SerializeField] private TextMeshProUGUI timerText;
 
     private bool isGameRunning = true;
+    private float gameTime;
 
     void Start()
     {
         timerText = GameManager.Instance.UI._furbo.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>();
         _narrative = NarrativeManager.Instance;
 
-        // Guardar las posiciones iniciales
         initialPlayerPosition = player_.transform.position;
         initialBallPosition = ball_.transform.position;
 
+        gameTime = GetGameTimeForCurrentLevel();
         GameManager.Instance.UI._furbo.SetActive(true);
 
-        // Iniciar la corrutina del temporizador
         StartCoroutine(GameTimer());
     }
 
@@ -39,13 +38,12 @@ public class GoalDetector : MonoBehaviour
     {
         if (!isGameRunning) return;
 
-        if (other.CompareTag("Ball")) // Comprueba si el objeto es la pelota
+        if (other.CompareTag("Ball"))
         {
             score++;
             GameManager.Instance.UpdateEntertainment(4);
             GameManager.Instance.UI._furbo.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = score.ToString() + " pts";
 
-            // Iniciar la corrutina para pausar antes de resetear
             StartCoroutine(ResetAfterDelay());
 
             if (score >= goalsToWin)
@@ -57,14 +55,11 @@ public class GoalDetector : MonoBehaviour
 
     private IEnumerator ResetAfterDelay()
     {
-        // Esperar 1 segundo
         yield return new WaitForSeconds(1f);
 
-        // Resetear posiciones
         player_.transform.position = initialPlayerPosition;
-        ball_.transform.position = initialBallPosition;
+        ball_.transform.position = GetRandomBallPosition();
 
-        // Resetear velocidades
         Rigidbody ballRb = ball_.GetComponent<Rigidbody>();
         ballRb.linearVelocity = Vector3.zero;
         ballRb.angularVelocity = Vector3.zero;
@@ -74,19 +69,22 @@ public class GoalDetector : MonoBehaviour
         playerRb.angularVelocity = Vector3.zero;
     }
 
+    private Vector3 GetRandomBallPosition()
+    {
+        float randomOffsetZ = Random.Range(-10f, 10f);
+        return new Vector3(initialBallPosition.x, initialBallPosition.y, initialBallPosition.z + randomOffsetZ);
+    }
+
     private IEnumerator GameTimer()
     {
         while (gameTime > 0)
         {
             if (!isGameRunning) yield break;
 
-            // Reducir el tiempo
             gameTime -= Time.deltaTime;
+            timerText.text = "Fin: " + Mathf.CeilToInt(gameTime).ToString();
 
-            // Actualizar la UI del temporizador
-            timerText.text = "Tiempo: " + Mathf.CeilToInt(gameTime).ToString();
-
-            yield return null; // Esperar al siguiente frame
+            yield return null;
         }
 
         EndMinigame();
@@ -99,5 +97,23 @@ public class GoalDetector : MonoBehaviour
         _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
 
         GameManager.Instance.UI._furbo.SetActive(false);
+    }
+
+    private float GetGameTimeForCurrentLevel()
+    {
+        int currentLevel = _narrative.Act;
+
+        switch (currentLevel)
+        {
+            case 1:
+            case 2:
+                return 59f;
+            case 3:
+                return 35f;
+            case 4:
+                return 15f;
+            default:
+                return 30f;
+        }
     }
 }

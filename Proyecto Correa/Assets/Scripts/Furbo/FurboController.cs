@@ -5,7 +5,7 @@ public class FurboController : MonoBehaviour
     [SerializeField] private GameObject ball; // Referencia a la pelota
     [SerializeField] private float kickForce = 500f; // Fuerza del disparo
     [SerializeField] private float maxKickDistance = 2f; // Distancia máxima para poder disparar
-    [SerializeField] private float liftFactor = 0.5f; // Factor para elevar la pelota
+    [SerializeField] private float liftFactor = 0.5f;
 
     void Update()
     {
@@ -28,14 +28,6 @@ public class FurboController : MonoBehaviour
                 // Si está dentro del rango, dispara la pelota
                 KickBall();
             }
-            else
-            {
-                Debug.Log("¡Demasiado lejos para disparar!");
-            }
-        }
-        else
-        {
-            Debug.LogError("No se ha asignado la pelota.");
         }
     }
 
@@ -49,11 +41,6 @@ public class FurboController : MonoBehaviour
 
             // Aplicar fuerza a la pelota
             ballRb.AddForce(kickDirection * kickForce);
-            Debug.Log("¡Disparo realizado!");
-        }
-        else
-        {
-            Debug.LogError("La pelota no tiene un Rigidbody.");
         }
     }
 }

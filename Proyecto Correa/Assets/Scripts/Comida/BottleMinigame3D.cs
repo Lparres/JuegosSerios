@@ -66,12 +66,10 @@ public class BottleMinigame3D : MonoBehaviour
 
         if (success)
         {
-            Debug.Log("¡Ganaste el minijuego!");
             bottleMaterial.color = correctColor; // Indicar éxito
         }
         else
         {
-            Debug.Log("Perdiste el minijuego.");
             bottleMaterial.color = incorrectColor; // Indicar fallo
         }
 

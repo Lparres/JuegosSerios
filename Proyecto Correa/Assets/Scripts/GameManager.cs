@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ProgressBarController _progressBarController;
     private SceneTransitionManager _sceneTransitionManager;
     private NarrativeManager _narrativeManager;
+    public NarrativeManager GetNarrativeManager() { return _narrativeManager; }
 
     private GameObject _player;
     public GameObject GetPlayer() { return _player; }
@@ -138,9 +139,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        Debug.Log(sceneName + " [Cambio Escena]");
         DialogueEnded();
-        //_progressBarController.ResetAllBars();
         _sceneTransitionManager.ChangeScene(sceneName);
     }
 
@@ -159,6 +158,15 @@ public class GameManager : MonoBehaviour
                 UI.intro2.SetActive(true);
                 UI.intro2.GetComponent<IntroSequence>().playIntro();
                 break;
+            case 3:
+                UI.intro3.SetActive(true);
+                UI.intro3.GetComponent<IntroSequence>().playIntro();
+                break;
+            case 4:
+                UI.intro4.SetActive(true);
+                UI.intro4.GetComponent<IntroSequence>().playIntro();
+                break;
+            default: break;
         }
     }
 

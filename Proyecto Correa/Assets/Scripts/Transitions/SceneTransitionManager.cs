@@ -72,7 +72,6 @@ public class SceneTransitionManager : MonoBehaviour
         color.a = 1;
         fadeImage.color = color;
 
-        Debug.Log("LOAD SCENE");
         // Cambiar de escena
         SceneManager.LoadScene(sceneName);
 

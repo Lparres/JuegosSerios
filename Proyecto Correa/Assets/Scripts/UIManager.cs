@@ -18,10 +18,8 @@ public class UIManager : MonoBehaviour
 
     public void ChangeDialogue(string text)
     {
-        Debug.Log(text);
         if (!Typing && text.Length != 0) 
         {
-            Debug.Log("UI LINEA");
             _dialogue.SetActive(true);
             _sentence = text;
             StopAllCoroutines();
