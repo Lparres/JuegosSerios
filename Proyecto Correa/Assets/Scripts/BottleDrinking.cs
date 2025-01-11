@@ -6,7 +6,7 @@ public class BottleDrinking : MonoBehaviour
     [SerializeField] private GameObject bottleContent;
     [SerializeField] private float drinkingSpeed = 0.05f;
     [SerializeField] private float scaleThreshold = 0.05f;
-    
+
     private NarrativeManager _narrative;
 
     private float timer = 0f;
@@ -26,7 +26,6 @@ public class BottleDrinking : MonoBehaviour
                 Drink();
             }
 
-            // Comprobaci�n Final
             if (bottleContent.transform.localScale.y <= scaleThreshold)
             {
                 FinishDrinking();
@@ -36,16 +35,15 @@ public class BottleDrinking : MonoBehaviour
 
     void Drink()
     {
-        // Reduce la escala en el eje Y
         Vector3 newScale = bottleContent.transform.localScale;
         newScale.y -= drinkingSpeed;
         bottleContent.transform.localScale = newScale;
 
-        // Opcional: Ajusta la posici�n
         Vector3 newPosition = bottleContent.transform.position;
         newPosition.y -= drinkingSpeed / 2;
         bottleContent.transform.position = newPosition;
 
+        GameManager.Instance.UpdateHunger(1);
         timer += Time.deltaTime;
     }
 
@@ -53,7 +51,6 @@ public class BottleDrinking : MonoBehaviour
     {
         isDrinking = false;
         Debug.Log(timer + " segs");
-        GameManager.Instance.UpdateHunger(10);
         _narrative.EventByName("MinigameEnded", "Acto" + _narrative.Act);
     }
 }

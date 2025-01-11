@@ -1,2 +1,2 @@
-﻿Me lo paso muy bien estando contigo.
-Pregúntale a mamá y papá que hacemos ahora.
+﻿Es una pena que no te dejen venir, espero que te recuperes rapido.
+Nos vemos a la vuelta, ¿vale?
