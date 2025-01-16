@@ -7,7 +7,7 @@ public class Obstacle : MonoBehaviour
         Debug.Log("QUITO PASEO");
         if (GameManager.Instance.GetNarrativeManager().Act <= 2)
         {
-            GameManager.Instance.UpdateWalk(-5);
+            GameManager.Instance.UpdateWalk(-10);
         }
         else
         {

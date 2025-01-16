@@ -4,21 +4,24 @@ public class WalkingManager : MonoBehaviour
 {
     [SerializeField] private float timer;
     [SerializeField] private GameObject player;
+    private float checkInterval = 2f;
+    private float nextCheckTime;
 
     private void Start()
     {
         if (GameManager.Instance.GetNarrativeManager().Act <= 2)
         {
             player.GetComponent<PlayerControllerWalk>().velocidad = 4;
-            player.GetComponent<PlayerControllerWalk>().fuerzaDeSalto = 8;
+            player.GetComponent<PlayerControllerWalk>().fuerzaDeSalto = 5;
         }
         else
         {
             player.GetComponent<PlayerControllerWalk>().velocidad = 7;
-            player.GetComponent<PlayerControllerWalk>().fuerzaDeSalto = 7;
+            player.GetComponent<PlayerControllerWalk>().fuerzaDeSalto = 4;
         }
+        nextCheckTime = Time.time + checkInterval;
     }
-    // Update is called once per frame
+
     void Update()
     {
         timer -= Time.deltaTime;
@@ -28,10 +31,24 @@ public class WalkingManager : MonoBehaviour
             byebye();
             timer = 0;
         }
+
+        if (Time.time >= nextCheckTime)
+        {
+            nextCheckTime += checkInterval;
+
+            if (GameManager.Instance.GetNarrativeManager().Act <= 2)
+            {
+                GameManager.Instance.UpdateWalk(2);
+            }
+            else
+            {
+                GameManager.Instance.UpdateWalk(1);
+            }
+        }
     }
 
     void byebye()
     {
-        // Implementa este método con la funcionalidad deseada
+        GameManager.Instance.GetNarrativeManager().EventByName("MinigameEnded", "Acto" + GameManager.Instance.GetNarrativeManager().Act);
     }
 }
