@@ -43,7 +43,7 @@ public class GoalDetector : MonoBehaviour
             score++;
             GameManager.Instance.UpdateEntertainment(4);
             GameManager.Instance.UI._furbo.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = score.ToString() + " pts";
-
+        
             StartCoroutine(ResetAfterDelay());
         }
     }
