@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b37b55409059c4b90eb219c83bd63b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b37b55409059c4b90eb219c83bd63b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b37b55409059c4b90eb219c83bd63b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9b37b55409059c4b90eb219c83bd63b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -291,9 +291,6 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 7149071293a237b4fb93de69fd8b231c, type: 3}
   _act3TxtAssets:
   - {fileID: 4900000, guid: 5bb3dfcb7589d2f4fbe000533902e1ca, type: 3}
-  - {fileID: 4900000, guid: 3c064d8b0e903c84f83f48c6daa4ecdc, type: 3}
-  - {fileID: 4900000, guid: 996a4e6f0a9283444968f995b85d89c6, type: 3}
-  - {fileID: 4900000, guid: dce656430222adf4f8ac7ab564cc473b, type: 3}
   _act4TxtAssets: []
   _act5TxtAssets: []
 --- !u!114 &4238977595115610374

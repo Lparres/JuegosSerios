@@ -814,14 +814,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133444821}
     m_Modifications:
-    - target: {fileID: -3507505587266471964, guid: f4776233af027b149943b595365a2e37, type: 3}
-      propertyPath: '_act1TxtAssets.Array.data[0]'
-      value: 
-      objectReference: {fileID: 4900000, guid: 8e792011f2fb6304c8878603744b2067, type: 3}
-    - target: {fileID: 662490511020757630, guid: f4776233af027b149943b595365a2e37, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 397ec80f2126a0d4786acc5a9c94469b, type: 2}
     - target: {fileID: 6096290478586073790, guid: f4776233af027b149943b595365a2e37, type: 3}
       propertyPath: m_Name
       value: Hijo

@@ -238,8 +238,6 @@ MonoBehaviour:
   _act3TxtAssets:
   - {fileID: 4900000, guid: 86e9f192608820f44a1093e5222e9859, type: 3}
   - {fileID: 4900000, guid: 83f1ae0fc46f12b41946bd6b47c01d7b, type: 3}
-  - {fileID: 4900000, guid: 4f5057d595fd901428f2cee52847c0be, type: 3}
-  - {fileID: 4900000, guid: 01fbcd1983ea9ee44a96ffc6106192ce, type: 3}
   _act4TxtAssets: []
   _act5TxtAssets: []
 --- !u!136 &7318637255178277694

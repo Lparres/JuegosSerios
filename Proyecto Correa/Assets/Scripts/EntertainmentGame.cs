@@ -22,7 +22,8 @@ public class EntertainmentGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.ChangeScene("MinijuegoEntretenimiento");
+        if(other.GetComponent<InputManager>() != null)
+            GameManager.Instance.ChangeScene("MinijuegoEntretenimiento");
     }
 
     public void SetState(bool state)

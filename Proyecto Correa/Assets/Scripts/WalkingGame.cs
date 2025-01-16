@@ -19,6 +19,9 @@ public class WalkingGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.ChangeScene("MinijuegoPaseo");
+        if(other.GetComponent<InputManager>() != null)
+        {
+            GameManager.Instance.ChangeScene("MinijuegoPaseo");
+        }
     }
 }
