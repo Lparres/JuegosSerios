@@ -25,11 +25,31 @@ public class GeneradorNivel : MonoBehaviour
         aux.transform.Rotate(new Vector3(1, 0, 0), -90);
         aux.transform.Rotate(new Vector3(0, 0, 1), 90);
 
-        if (Random.value > 0.5f)
+        if (Random.value < 0.25f)
         {
             float posicionXObstaculo = Random.Range(-2f, 2f);
             aux = Instantiate(prefabObstaculo, new Vector3(posicionXObstaculo, 1f, posicionZ), Quaternion.identity);
             aux.transform.position = new Vector3(6, 0, posicionZ);
+
+        }
+        else if (Random.value < 0.5f)
+        {
+            float posicionXObstaculo = Random.Range(-2f, 2f);
+            aux = Instantiate(prefabObstaculo, new Vector3(posicionXObstaculo, 1f, posicionZ), Quaternion.identity);
+            aux.transform.position = new Vector3(6, 0, posicionZ);
+            aux = Instantiate(prefabObstaculo, new Vector3(posicionXObstaculo, 1f, posicionZ), Quaternion.identity);
+            aux.transform.position = new Vector3(6, 0, posicionZ + 10);
+
+        }
+        else if (Random.value < 1f)
+        {
+            float posicionXObstaculo = Random.Range(-2f, 2f);
+            aux = Instantiate(prefabObstaculo, new Vector3(posicionXObstaculo, 1f, posicionZ), Quaternion.identity);
+            aux.transform.position = new Vector3(6, 0, posicionZ);
+            aux = Instantiate(prefabObstaculo, new Vector3(posicionXObstaculo, 1f, posicionZ), Quaternion.identity);
+            aux.transform.position = new Vector3(6, 0, posicionZ + 10);
+            aux = Instantiate(prefabObstaculo, new Vector3(posicionXObstaculo, 1f, posicionZ), Quaternion.identity);
+            aux.transform.position = new Vector3(6, 0, posicionZ + 20);
 
         }
     }

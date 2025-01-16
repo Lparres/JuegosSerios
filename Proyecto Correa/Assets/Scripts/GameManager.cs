@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Acto1"){
+        if(SceneManager.GetActiveScene().name != "Cinematica Inicio Navidad"){
             UpdateHunger(-_narrativeManager.Speed * Time.deltaTime);
             UpdateWalk(-_narrativeManager.Speed * Time.deltaTime);
             UpdateEntertainment(-_narrativeManager.Speed * Time.deltaTime);
@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour
         _progressBarController.UpdateEntertainment(amount);
     }
 
-    private void UpdateWalk(float amount)
+    public void UpdateWalk(float amount)
     {
         _progressBarController.UpdateWalk(amount);
     }
