@@ -11,6 +11,11 @@ public class Interactor2000 : MonoBehaviour
     private bool _interacting;
     [SerializeField] private LayerMask _layer;
 
+    public void SetNPC(GameObject npc)
+    {
+        _npc = npc;
+    }
+    
     public void Interact()
     {
         if (Camera.main != null) _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -59,6 +64,7 @@ public class Interactor2000 : MonoBehaviour
         }
         else if (GameManager.Instance.OnDialogue)
         {
+            Debug.Log("DIALOGUE");
             if(_npc.TryGetComponent<Guion>(out Guion g))
                 g.NextLine();
         }

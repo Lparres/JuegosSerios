@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^El cumpleaños de Alex ha estado muy bien, menos mal que no has estado fastidiando como siempre.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^El cumpleaños de Alex ha estado muy bien, menos mal que no has estado fastidiando como siempre.","\n","ev","str","^Castigao","/str","str","^Mama","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
