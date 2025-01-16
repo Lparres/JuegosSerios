@@ -25,7 +25,7 @@ public class NarrativeManager : MonoBehaviour
 
     [SerializeField] private GlobalEventRegistry _eventRegistry;
 
-    private void AdvanceAct(string a)
+    public void AdvanceAct(string a)
     {
         _subIndexAct++;
     }

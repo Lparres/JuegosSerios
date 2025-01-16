@@ -329,7 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eed4cccfbf7ff14ea72d9df452063d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoRestante: 10
+  tiempoRestante: 50
+  mifckingpuertaloco: {fileID: 1511678172}
 --- !u!1 &332831443
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +498,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169a98178f6acea43b3b72318e1e3fdb, type: 3}
+--- !u!1 &1511678172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5923296432777951067, guid: 169a98178f6acea43b3b72318e1e3fdb, type: 3}
+  m_PrefabInstance: {fileID: 1511678171}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1898741396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1513,6 @@ MonoBehaviour:
   - {fileID: 4900000, guid: afeec27a392c1a546bb6c3b8d7cc5ece, type: 3}
   - {fileID: 4900000, guid: 1214cd957f654fa45b8471e4235975f9, type: 3}
   - {fileID: 4900000, guid: 790674efef8c82a40b5a5260c0eacc24, type: 3}
-  - {fileID: 4900000, guid: 5a8b3d66c65b5f140b84fd1b39232479, type: 3}
   _act4TxtAssets: []
   _act5TxtAssets: []
 --- !u!4 &3316237383089939074
@@ -2821,8 +2826,6 @@ MonoBehaviour:
   _act3TxtAssets:
   - {fileID: 4900000, guid: 86e9f192608820f44a1093e5222e9859, type: 3}
   - {fileID: 4900000, guid: 83f1ae0fc46f12b41946bd6b47c01d7b, type: 3}
-  - {fileID: 4900000, guid: 4f5057d595fd901428f2cee52847c0be, type: 3}
-  - {fileID: 4900000, guid: 01fbcd1983ea9ee44a96ffc6106192ce, type: 3}
   _act4TxtAssets: []
   _act5TxtAssets: []
 --- !u!1660057539 &9223372036854775807

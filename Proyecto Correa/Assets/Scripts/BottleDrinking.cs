@@ -15,6 +15,8 @@ public class BottleDrinking : MonoBehaviour
     private void Start()
     {
         _narrative = NarrativeManager.Instance;
+        if (NarrativeManager.Instance.Act == 1) drinkingSpeed = 0.1f;
+        if (NarrativeManager.Instance.Act == 2) drinkingSpeed = 0.25f;
     }
 
     void Update()

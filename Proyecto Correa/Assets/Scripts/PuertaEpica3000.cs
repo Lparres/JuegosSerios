@@ -3,6 +3,7 @@ using UnityEngine;
 public class PuertaEpica3000 : MonoBehaviour
 {
     [SerializeField] private float tiempoRestante;
+    [SerializeField] private GameObject mifckingpuertaloco;
 
     private bool temporizadorActivo = true;
     void Start()
@@ -28,9 +29,10 @@ public class PuertaEpica3000 : MonoBehaviour
     void ByebyePuerta()
     {
         this.gameObject.SetActive(false);
+        mifckingpuertaloco.GetComponent<DoorController>().ToggleDoor();
+        NarrativeManager.Instance.AdvanceAct("");
     }
 
-    // Método para reiniciar el temporizador (opcional)
     public void ReiniciarTemporizador(float nuevoTiempo)
     {
         tiempoRestante = nuevoTiempo;
