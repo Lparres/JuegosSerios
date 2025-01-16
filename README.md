@@ -13,7 +13,10 @@ Todos el contenido del juego es de propia creación, exceptuando los siguientes 
 - Tipografías.
 - Modelo perro. Este modelo cuenta con una licencia CC 4.0 Attribution. El asset ha sido modificado para su correcta integración en el juego.
   - https://sketchfab.com/3d-models/low-poly-dog-15d4cf0ad6bc418fa63872a9f5f37734
+- Modelo arbol de navidad. ESte modelo cuenta con una licencia CC 4.0 Attribution.
+  - https://sketchfab.com/3d-models/low-poly-decorated-christmas-tree-3c08d8a970c242399a9086bc439a7ad8
 - Animaciones de Mixamo. Cubiertas por las condiciones de uso de Adobe y de Mixamo.
   - https://www.adobe.com/es/legal/terms.html#mixamo
+
 
 No se ha utilizado IA generativa para el desarrollo de ningún elemento visual o de diseño.
