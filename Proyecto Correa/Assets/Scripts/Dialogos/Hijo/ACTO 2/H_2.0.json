@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Me lo paso muy bien estando contigo.","\n","^Pregúntale a mamá y papá que hacemos ahora.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Uf, siempre igual contigo.","\n","^Venga, va, salgamos, pero no pienses que será algo largo, ¿eh?","\n","^¡Apúrate antes de que me arrepienta!","\n","ev","str","^ActivateMinigameEvent","/str","str","^Walk","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

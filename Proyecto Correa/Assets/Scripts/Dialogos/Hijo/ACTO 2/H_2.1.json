@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^El paseo ha estado muy bien.","\n","^Que te parece si ahora jugamos un poco.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Oye, ahí está tu plato.","\n","^No hagas un escándalo, que siempre es lo mismo contigo.","\n","ev","str","^ActivateMinigameEvent","/str","str","^Food","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

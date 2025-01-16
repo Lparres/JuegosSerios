@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Que sepas que soy mi feliz contigo.","\n","^Me encanta jugar y hacer cosas contigo.","\n","^Va siendo hora de ir a la cocina que estoy hambriento.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Está bien, sal al jardín, pero juega tú solo.","\n","^No me pidas que te siga porque estoy cansado.","\n","ev","str","^ActivateMinigameEvent","/str","str","^Entertainment","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

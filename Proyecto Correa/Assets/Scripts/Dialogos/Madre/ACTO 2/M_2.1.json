@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Aprovechad que todavía es temprano y jugad un poco con vuestra pelota.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Anda, ven aquí.","\n","^Tienes que comer lo que hay y no hacer tantas tonterías.","\n","^No me hagas perder más tiempo.","\n","ev","str","^ActivateMinigameEvent","/str","str","^Food","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
