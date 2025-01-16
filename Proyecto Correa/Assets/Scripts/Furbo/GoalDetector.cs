@@ -16,6 +16,7 @@ public class GoalDetector : MonoBehaviour
     private Vector3 initialBallPosition;
 
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI pointText;
 
     private bool isGameRunning = true;
     private float gameTime;
@@ -23,6 +24,11 @@ public class GoalDetector : MonoBehaviour
     void Start()
     {
         timerText = GameManager.Instance.UI._furbo.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>();
+        pointText = GameManager.Instance.UI._furbo.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
+
+        timerText.text = "Fin: 30";
+        pointText.text = "0 pts";
+
         _narrative = NarrativeManager.Instance;
 
         initialPlayerPosition = player_.transform.position;
@@ -101,12 +107,13 @@ public class GoalDetector : MonoBehaviour
         switch (currentLevel)
         {
             case 1:
+                return 59;
             case 2:
-                return 59f;
+                return 25f;
             case 3:
-                return 35f;
-            case 4:
                 return 15f;
+            case 4:
+                return 5f;
             default:
                 return 30f;
         }

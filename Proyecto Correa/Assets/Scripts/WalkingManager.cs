@@ -6,6 +6,7 @@ public class WalkingManager : MonoBehaviour
     [SerializeField] private GameObject player;
     private float checkInterval = 2f;
     private float nextCheckTime;
+    bool byebyedeado = false;
 
     private void Start()
     {
@@ -49,6 +50,10 @@ public class WalkingManager : MonoBehaviour
 
     void byebye()
     {
-        GameManager.Instance.GetNarrativeManager().EventByName("MinigameEnded", "Acto" + GameManager.Instance.GetNarrativeManager().Act);
+        if (!byebyedeado)
+        {
+            GameManager.Instance.GetNarrativeManager().EventByName("MinigameEnded", "Acto" + GameManager.Instance.GetNarrativeManager().Act);
+            byebyedeado = true;
+        }
     }
 }
