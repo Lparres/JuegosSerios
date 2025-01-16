@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GlobalEventRegistry _eventRegistry;
     
     private float _time;
+
+    public Vector3 deathPosition = new Vector3(30, 0.5f, 0);
     
     public bool OnDialogue { get;  set; }
 

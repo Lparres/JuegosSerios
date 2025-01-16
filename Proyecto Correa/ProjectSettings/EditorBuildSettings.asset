@@ -32,6 +32,15 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Biber\xF3n.unity"
     guid: cd7e291c1ff62b04fb9566ea74edc51c
+  - enabled: 1
+    path: Assets/Scenes/Acto3.unity
+    guid: 3fc7c0eb0ef52914a8e789bfe7f8d455
+  - enabled: 1
+    path: Assets/Scenes/ActoFInal.unity
+    guid: 58961866c587967468335e6b55f396a8
+  - enabled: 1
+    path: Assets/Scenes/CinematicaFinal.unity
+    guid: 1262b1df41cc72947a802d5ffa7100e0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 60cb1e8c03b778743ab40465c2bda895, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
