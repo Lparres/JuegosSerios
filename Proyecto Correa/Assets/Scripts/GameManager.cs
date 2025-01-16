@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager _ui;
     public UIManager UI { get { return _ui; } }
     
-    [SerializeField] private ProgressBarController _progressBarController;
+    [SerializeField] public ProgressBarController _progressBarController;
     private SceneTransitionManager _sceneTransitionManager;
     private NarrativeManager _narrativeManager;
     public NarrativeManager GetNarrativeManager() { return _narrativeManager; }

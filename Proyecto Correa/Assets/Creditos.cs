@@ -22,7 +22,7 @@ public class Creditos : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         // 5. Espera antes de hacer el fade out del fondo
-        _text.text = "DISEÑADO POR TODOS Y DESARROLLADO POR JAVIER TIRADO Y JAIME VICENTE";
+        _text.text = "DISEÑADO Y DESARROLLADO POR JAVIER TIRADO, JAIME VICENTE Y LUIS PARRES";
 
         // 6. Fade out del fondo
         yield return new WaitForSeconds(5);
@@ -32,7 +32,7 @@ public class Creditos : MonoBehaviour
         // 7. Activar medidores
         yield return new WaitForSeconds(2);
 
-        _text.text = "CASI TODO EL ARTE POR LUIS PARRES";
+        _text.text = "CASI TODO EL ARTE POR LUIS PARRES (a ver si programa algo a la proxima)";
         
         
         yield return new WaitForSeconds(5);
@@ -50,7 +50,7 @@ public class Creditos : MonoBehaviour
         
         yield return new WaitForSeconds(2);
         
-        SceneManager.LoadScene(0);
+        Application.Quit(); // Salir del juego
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

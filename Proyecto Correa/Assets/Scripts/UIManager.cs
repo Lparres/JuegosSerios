@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject intro2;
     public GameObject intro3;
     public GameObject intro4;
-
+    public GameObject medidores;
     public GameObject _furbo;
     [SerializeField] private GameObject _dialogue;
     [SerializeField] private TMP_Text _message;

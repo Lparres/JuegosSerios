@@ -389,6 +389,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5839037046061953272, guid: 169a98178f6acea43b3b72318e1e3fdb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11.541751
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839037046061953272, guid: 169a98178f6acea43b3b72318e1e3fdb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.39091
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839037046061953272, guid: 169a98178f6acea43b3b72318e1e3fdb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.079417
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839037046061953272, guid: 169a98178f6acea43b3b72318e1e3fdb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.068909
+      objectReference: {fileID: 0}
     - target: {fileID: 8736332705073589393, guid: 169a98178f6acea43b3b72318e1e3fdb, type: 3}
       propertyPath: m_LocalScale.x
       value: 21.866812
@@ -1119,6 +1135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxInteractionDistance: 3
   _player: {fileID: 0}
+  _layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1158998984
 MonoBehaviour:
   m_ObjectHideFlags: 0
