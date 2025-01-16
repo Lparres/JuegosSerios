@@ -6956,9 +6956,8 @@ MonoBehaviour:
   speedReduction: 0.02
   vignetteIntensity: 0.01
   vignetteSmoothness: 0.02
-  startFadeIn: 3
+  startFadeIn: 30
   fadeInSpeed: 0.1
-  fade: {fileID: 1675184806}
 --- !u!4 &1117006740
 Transform:
   m_ObjectHideFlags: 0
@@ -10300,17 +10299,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2477511411847689622, guid: 9e830406e8bbc7e468cc78ee50687a16, type: 3}
---- !u!114 &1675184806 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8231197908288800744, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
-  m_PrefabInstance: {fileID: 1466732205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1678164598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4811171726696857748, guid: 1439461b29a0e1a46968df5a5a9f4fa2, type: 3}

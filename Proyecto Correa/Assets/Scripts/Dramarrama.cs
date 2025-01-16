@@ -12,6 +12,7 @@ public class Dramarrama : MonoBehaviour
 
     [SerializeField] float fadeInSpeed;
     private Image fade;
+    [SerializeField] Image img;
     void Start()
     {
         Instantiate(cachorroPrefab, GameManager.Instance.deathPosition, Quaternion.identity);
@@ -57,6 +58,7 @@ public class Dramarrama : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
+        img.gameObject.SetActive(true);
         fade.gameObject.SetActive(false);
 
         SceneManager.LoadScene(0);
