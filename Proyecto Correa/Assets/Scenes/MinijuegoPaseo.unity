@@ -197,7 +197,7 @@ MonoBehaviour:
   prefabSuelo: {fileID: 8059170377988852841, guid: bec53015fcf2e79498b65148193239ba, type: 3}
   prefabObstaculo: {fileID: 3609660673544440616, guid: 921234329ff532d42b7175b9531b3b36, type: 3}
   jugador: {fileID: 2051567573}
-  distanciaDeGeneracion: 30
+  distanciaDeGeneracion: 150
   separacionEntreSegmentos: 30
 --- !u!4 &788694307
 Transform:
