@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Veo que has dormido muy bien hoy ehh.","\n","^Queremos dar un paseo ahora que hace un día maravilloso.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^¿En serio? Siempre quieres salir justo cuando estoy ocupado.","\n","^Está bien, pero vamos y no te entretengas demasiado.","\n","ev","str","^ActivateMinigameEvent","/str","str","^Walk","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

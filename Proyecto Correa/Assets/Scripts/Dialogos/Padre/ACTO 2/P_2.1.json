@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Podeis aprovechar y jugar con la pelota que os regalaron hace unos meses.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Ahí está tu comida.","\n","^Si no la quieres, no vengas después llorando, ¿eh?","\n","ev","str","^ActivateMinigameEvent","/str","str","^Food","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

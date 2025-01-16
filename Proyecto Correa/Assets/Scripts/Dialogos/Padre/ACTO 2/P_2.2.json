@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Con tanto correr os veo reventadetes.","\n","^No os preocupeis que ahora toca comer en la cocina.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Si vas a salir al jardín, no hagas mucho lío, ¿entendido?","\n","^Y no te metas en cosas raras.","\n","ev","str","^ActivateMinigameEvent","/str","str","^Entertainment","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

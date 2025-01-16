@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Espero que estes cansado, porque vaya diita hemos tenido ehh.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Anda, a dormir.","\n","^Que ya es tarde y mañana será otro día igual, ¿no?","\n","ev","str","^ActivateMinigameEvent","/str","str","^Stairs","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

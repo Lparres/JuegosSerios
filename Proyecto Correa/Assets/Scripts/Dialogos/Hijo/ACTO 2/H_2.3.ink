@@ -1,2 +1,4 @@
-﻿Que guay todo, aunque hacer tantas cosas hace que me entre sueño.
-Creo que va siendo hora de dormir ya.
+﻿EXTERNAL StoryEvent(eventName, info)
+¡Vamos a la cama, Andy! 
+Y no hagas ruidos esta vez, que quiero dormir tranquilo.
+~StoryEvent("ActivateMinigameEvent", "Stairs")

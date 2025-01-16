@@ -1,3 +1,5 @@
-﻿Te veo muy feliz, nosotros también lo estamos contigo.
-Todos estos días estamos haciendo muchas cosas en familia.
-Ve saliendo y ahora damos un paseo todos.
+﻿EXTERNAL StoryEvent(eventName, set)
+¿Otra vez con eso? 
+Bueno, está bien, pero que sea rápido. 
+Ponte listo y no tardes, ¿sí?
+~StoryEvent("ActivateMinigameEvent", "Walk")

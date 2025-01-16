@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^Venga Alex a dormir que hoy hemos hecho muchas cosas todos.","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^Ya es hora de dormir.","\n","^Vamos, no me hagas repetirlo.","\n","^No quiero oírte dando vueltas por la casa.","\n","ev","str","^ActivateMinigameEvent","/str","str","^Stairs","/str",{"x()":"StoryEvent","exArgs":2},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

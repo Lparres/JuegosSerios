@@ -1,2 +1,4 @@
-﻿Con tanto correr os veo reventadetes.
-No os preocupeis que ahora toca comer en la cocina.
+﻿EXTERNAL StoryEvent(eventName, info)
+Si vas a salir al jardín, no hagas mucho lío, ¿entendido? 
+Y no te metas en cosas raras.
+~StoryEvent("ActivateMinigameEvent", "Entertainment")

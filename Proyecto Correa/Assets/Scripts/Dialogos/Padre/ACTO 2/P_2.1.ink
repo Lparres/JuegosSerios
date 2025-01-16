@@ -1,1 +1,4 @@
-﻿Podeis aprovechar y jugar con la pelota que os regalaron hace unos meses.
+﻿EXTERNAL StoryEvent(eventName, info)
+Ahí está tu comida. 
+Si no la quieres, no vengas después llorando, ¿eh?
+~StoryEvent("ActivateMinigameEvent", "Food")
