@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Dramarrama : MonoBehaviour
 {
+    [SerializeField] private Creditos _creditos;
     [SerializeField] GameObject cachorroPrefab;
     [SerializeField] Camera cam;
     
@@ -36,7 +37,7 @@ public class Dramarrama : MonoBehaviour
         fade.gameObject.SetActive(true);
         fade.color = new Color(0, 0, 0, 1);
 
-        while (cam.transform.position.y < 10) {
+        while (cam.transform.position.y < 8f) {
             cam.transform.position += Vector3.up * cameraCinematicSpeed * Time.deltaTime;
             if(fade.color.a > 0 && cam.transform.position.y < 5)
                 fade.color -= new Color(0, 0, 0, 0.1f) * Time.deltaTime;
@@ -61,8 +62,6 @@ public class Dramarrama : MonoBehaviour
         img.gameObject.SetActive(true);
         fade.gameObject.SetActive(false);
 
-        SceneManager.LoadScene(0);
-
-
+        StartCoroutine(_creditos.Credits());
     }
 }
