@@ -2,24 +2,24 @@ using UnityEngine;
 
 public class BottleMinigame3D : MonoBehaviour
 {
-    public Renderer bottleRenderer; // Renderer del biberón para cambiar el material/color
+    public Renderer bottleRenderer; // Renderer del biberÃ³n para cambiar el material/color
     public Color correctColor = Color.green; // Color para el ritmo correcto
     public Color incorrectColor = Color.red; // Color para el ritmo incorrecto
-    public Color defaultColor = Color.white; // Color por defecto del biberón
+    public Color defaultColor = Color.white; // Color por defecto del biberÃ³n
 
     public float targetInterval = 0.5f; // Tiempo ideal entre pulsaciones (en segundos)
     public float tolerance = 0.1f; // Tolerancia en el ritmo
     public int successfulPressesRequired = 10; // Pulsaciones correctas necesarias para ganar
 
-    private float lastPressTime = 0f; // Tiempo de la última pulsación
-    private int successfulPressCount = 0; // Número de pulsaciones correctas
+    private float lastPressTime = 0f; // Tiempo de la Ãºltima pulsaciÃ³n
+    private int successfulPressCount = 0; // NÃºmero de pulsaciones correctas
     private bool isGameActive = true; // Estado del minijuego
 
-    private Material bottleMaterial; // Material del biberón para cambiar el color dinámicamente
+    private Material bottleMaterial; // Material del biberÃ³n para cambiar el color dinÃ¡micamente
 
     void Start()
     {
-        // Obtener el material inicial del Renderer del biberón
+        // Obtener el material inicial del Renderer del biberÃ³n
         bottleMaterial = bottleRenderer.material;
         bottleMaterial.color = defaultColor;
     }
@@ -33,7 +33,7 @@ public class BottleMinigame3D : MonoBehaviour
             float currentTime = Time.time; // Tiempo actual
             float timeDifference = currentTime - lastPressTime; // Diferencia entre pulsaciones
 
-            // Verificar si la pulsación está dentro del ritmo correcto
+            // Verificar si la pulsaciÃ³n estÃ¡ dentro del ritmo correcto
             if (timeDifference >= targetInterval - tolerance && timeDifference <= targetInterval + tolerance)
             {
                 successfulPressCount++;
@@ -44,7 +44,7 @@ public class BottleMinigame3D : MonoBehaviour
                 bottleMaterial.color = incorrectColor; // Cambiar a color rojo
             }
 
-            lastPressTime = currentTime; // Actualizar el tiempo de la última pulsación
+            lastPressTime = currentTime; // Actualizar el tiempo de la Ãºltima pulsaciÃ³n
 
             // Verificar si el jugador ha ganado
             if (successfulPressCount >= successfulPressesRequired)
@@ -66,13 +66,13 @@ public class BottleMinigame3D : MonoBehaviour
 
         if (success)
         {
-            bottleMaterial.color = correctColor; // Indicar éxito
+            bottleMaterial.color = correctColor; // Indicar Ã©xito
         }
         else
         {
             bottleMaterial.color = incorrectColor; // Indicar fallo
         }
 
-        // Aquí puedes agregar lógica adicional, como activar un evento o cambiar de escena
+        // AquÃ­ puedes agregar lÃ³gica adicional, como activar un evento o cambiar de escena
     }
 }

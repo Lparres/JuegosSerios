@@ -14,9 +14,12 @@ public class Interactor2000 : MonoBehaviour
     public void Interact()
     {
         if (Camera.main != null) _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+        
+        Debug.Log("INTERACTOR2000");
+        
         if (!GameManager.Instance.OnDialogue && Physics.Raycast(_ray, out _hit, 200, _layer))
-        {                    
+        {            
+            Debug.Log("RAY");
             _hitObject = _hit.collider.gameObject;
 
             // Calcular la distancia al objeto
@@ -25,6 +28,7 @@ public class Interactor2000 : MonoBehaviour
             // Comprobar si está dentro del rango de interacción
             if (distanceToObject <= _maxInteractionDistance)
             {
+                Debug.Log("DISTANCE");
                 // --- GUION ---
                 if (_hitObject.TryGetComponent<NPC>(out NPC n))
                 {
@@ -33,6 +37,7 @@ public class Interactor2000 : MonoBehaviour
                 // --- GUION ---
                 if (_hitObject.TryGetComponent<Guion>(out Guion g))
                 {
+                    Debug.Log("GUION");
                     _npc = _hitObject;
                     GameManager.Instance.OnDialogue = true;
                     GameManager.Instance.GetPlayer().GetComponent<FirstPersonController>().enabled = false;
@@ -41,11 +46,13 @@ public class Interactor2000 : MonoBehaviour
                 // --- PUERTA ---
                 if (_hitObject.TryGetComponent<DoorController>(out DoorController dc))
                 {
+                    Debug.Log("PUERTA");
                     dc.ToggleDoor();
                 }
                 // --- PUERTA CORREDERA ---
                 else if (_hitObject.TryGetComponent<SlidingDoor>(out SlidingDoor sd))
                 {
+                    Debug.Log("PUERTA");
                     sd.ToggleDoor();
                 }
             }

@@ -34,6 +34,7 @@ public class InputManager : MonoBehaviour
     
     private void OnInteract(InputAction.CallbackContext context)
     {
+        Debug.Log("INTERACT");
         if (_ui.Typing) _ui.Skip();
         else _i2000.Interact();
     }
