@@ -314,7 +314,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2703265618598850888, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: m_text
-      value: Controls
+      value: Controles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737073242798484812, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737073242798484812, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737073242798484812, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4612356057516127900, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -384,6 +396,14 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 4277155155853107130, guid: 4634b00d660b6d348a4be1cbe15bc21b, type: 3}
+    - target: {fileID: 8482232023206699652, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+      propertyPath: m_text
+      value: Salir
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695367020488993077, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
+      propertyPath: m_text
+      value: Jugar
+      objectReference: {fileID: 0}
     - target: {fileID: 8952807244507988221, guid: e21f25d2a9434244e92592d4da4dff83, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1085,7 +1105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go back
+  m_text: Volver
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1273,7 +1293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.63529414}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
