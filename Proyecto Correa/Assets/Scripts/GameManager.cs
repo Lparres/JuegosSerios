@@ -153,14 +153,17 @@ public class GameManager : MonoBehaviour
             case 1:
                 UI.intro1.SetActive(true);
                 UI.intro1.GetComponent<IntroSequence>().playIntro();
+                GameManager.Instance.UpdateWalk(10);
                 break;
             case 2:
                 UI.intro2.SetActive(true);
                 UI.intro2.GetComponent<IntroSequence>().playIntro();
+                GameManager.Instance.UpdateWalk(10);
                 break;
             case 3:
                 UI.intro3.SetActive(true);
                 UI.intro3.GetComponent<IntroSequence>().playIntro();
+                GameManager.Instance.UpdateWalk(5);
                 break;
             case 4:
                 UI.intro4.SetActive(true);
