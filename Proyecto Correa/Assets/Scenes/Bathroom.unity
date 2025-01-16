@@ -374,6 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c635a0c79b39d094a8b915ee4ef115fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventRegistry: {fileID: 11400000, guid: cbec4ab931b23bd468ae5f780d4d0aa2, type: 2}
 --- !u!1001 &1054393427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2828,8 +2829,8 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1511678171}
   - {fileID: 1054393427}
+  - {fileID: 1511678171}
   - {fileID: 19426693}
   - {fileID: 284680001}
   - {fileID: 5894822143197868168}

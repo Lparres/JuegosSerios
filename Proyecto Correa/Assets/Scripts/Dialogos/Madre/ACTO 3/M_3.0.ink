@@ -1,1 +1,1 @@
-﻿Si no estuvieses malo igual hubieses venido a el viaje, pero te quedas con la abuela.
+﻿Ve a hablar con Alex… está muy enfadado.

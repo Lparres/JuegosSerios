@@ -45,6 +45,10 @@ public class NarrativeManager : MonoBehaviour
             {
                 stringEvent.Raise(info);
             }
+            else if (globalEvent is NormalEvent normalEvent)
+            {
+                normalEvent.Raise();
+            }
         }
     }
 

@@ -1,1 +1,0 @@
-﻿(Salvajada2) Que haces ahí dentro todavía, ha sido una tarde divertida ehh.
